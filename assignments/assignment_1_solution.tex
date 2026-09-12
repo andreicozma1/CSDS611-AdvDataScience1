@@ -28,19 +28,12 @@ Consider the Bayesian model
 \]
 Assume that the observations are conditionally independent given $\lambda$,
 with $w_n\in\{0,1,2,\ldots\}$ and $\phi,\psi>0$.
-Gamma distribution is parameterized by
-shape $\phi$ and scale $\psi$.
+We use the Gamma shape--scale parameterization.
 Let $\mathbf{w}=(w_1,\ldots,w_N)$ and $S=\sum_{n=1}^{N}w_n$.
 We seek the posterior density $p(\lambda\mid\mathbf{w})$.
 
-\section*{1.
-  Likelihood}
+\section*{1. Likelihood and prior}
 
-The Poisson probability mass function is
-\[
-  p(w_n\mid\lambda)
-  =\frac{\lambda^{w_n}e^{-\lambda}}{w_n!}.
-\]
 Conditional independence gives the joint likelihood
 \begin{align*}
   p(\mathbf{w}\mid\lambda)
@@ -50,9 +43,6 @@ Conditional independence gives the joint likelihood
   {\prod_{n=1}^{N}w_n!}.
 \end{align*}
 
-\section*{2.
-  Prior}
-
 The Gamma prior has density
 \[
   p(\lambda)
@@ -61,22 +51,20 @@ The Gamma prior has density
   \qquad \lambda>0.
 \]
 
-\section*{3. Apply Bayes' rule}
+\section*{2. Apply Bayes' rule}
 
 By Bayes' rule,
 \begin{align*}
   p(\lambda\mid\mathbf{w})
    & \propto p(\mathbf{w}\mid\lambda)\,p(\lambda) \\
-   & =\frac{\lambda^{S}e^{-N\lambda}}
-  {\prod_{n=1}^{N}w_n!}
-  \frac{\lambda^{\phi-1}e^{-\lambda/\psi}}
-  {\Gamma(\phi)\psi^{\phi}}                       \\
-   & \propto\lambda^{\phi+S-1}
+   & \propto\lambda^{S}e^{-N\lambda}
+  \lambda^{\phi-1}e^{-\lambda/\psi}               \\
+   & =\lambda^{\phi+S-1}
   \exp\!\left[-\left(N+\frac{1}{\psi}\right)\lambda\right].
 \end{align*}
 The final proportionality omits only factors that do not depend on $\lambda$.
 
-\section*{4.
+\section*{3.
   Normalize and identify the posterior}
 
 Introduce a normalizing constant $C$ and write
@@ -94,15 +82,14 @@ $t=(N+1/\psi)\lambda$, we obtain
    & =C\int_{0}^{\infty}\lambda^{\phi+S-1}
   e^{-(N+1/\psi)\lambda}\,d\lambda                        \\
    & =C\left(N+\frac{1}{\psi}\right)^{-(\phi+S)}
-  \int_{0}^{\infty}t^{\phi+S-1}e^{-t}\,dt.
+  \int_{0}^{\infty}t^{\phi+S-1}e^{-t}\,dt                 \\
+   & =C\frac{\Gamma(\phi+S)}
+  {\left(N+\frac{1}{\psi}\right)^{\phi+S}}.
 \end{align*}
-The remaining integral equals $\Gamma(\phi+S)$, by normalization of the
+The integral in $t$ equals $\Gamma(\phi+S)$, by normalization of the
 Gamma density with shape $\phi+S$ and scale $1$.
 Therefore,
 \[
-  1=C\frac{\Gamma(\phi+S)}
-  {\left(N+\frac{1}{\psi}\right)^{\phi+S}},
-  \qquad
   C=\frac{\left(N+\frac{1}{\psi}\right)^{\phi+S}}
   {\Gamma(\phi+S)}.
 \]
@@ -117,15 +104,8 @@ Substituting $C$ gives the normalized posterior density:
     \quad \lambda>0.
   }
 \]
-Comparing this expression with the Gamma density gives the updated shape
-and scale:
-\[
-  \phi'=\phi+\sum_{n=1}^{N}w_n,
-  \qquad
-  \psi'=\frac{1}{N+1/\psi}
-  =\frac{\psi}{1+N\psi}.
-\]
-Thus,
+Recognizing the Gamma density, with scale
+$1/(N+1/\psi)=\psi/(1+N\psi)$, we conclude that
 \[
   \boxed{
     \lambda\mid w_1,\ldots,w_N
