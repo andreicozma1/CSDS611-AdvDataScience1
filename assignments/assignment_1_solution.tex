@@ -1,0 +1,142 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\title{%
+  Assignment 1: Poisson--Gamma Posterior\\[0.4em]
+  {\large CSDS 611 --- Advanced Topics and Methods of Data Science I}%
+}
+\author{Andrei Cozma}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Model and parameterization}
+
+Consider the Bayesian model
+\[
+  w_n\mid\lambda\sim\operatorname{Poisson}(\lambda),
+  \qquad n=1,\ldots,N,
+  \qquad
+  \lambda\sim\operatorname{Gamma}(\phi,\psi).
+\]
+Assume that the observations are conditionally independent given $\lambda$,
+with $w_n\in\{0,1,2,\ldots\}$ and $\phi,\psi>0$.
+Gamma distribution is parameterized by
+shape $\phi$ and scale $\psi$.
+Let $\mathbf{w}=(w_1,\ldots,w_N)$ and $S=\sum_{n=1}^{N}w_n$.
+We seek the posterior density $p(\lambda\mid\mathbf{w})$.
+
+\section*{1.
+  Likelihood}
+
+The Poisson probability mass function is
+\[
+  p(w_n\mid\lambda)
+  =\frac{\lambda^{w_n}e^{-\lambda}}{w_n!}.
+\]
+Conditional independence gives the joint likelihood
+\begin{align*}
+  p(\mathbf{w}\mid\lambda)
+   & =\prod_{n=1}^{N}
+  \frac{\lambda^{w_n}e^{-\lambda}}{w_n!} \\
+   & =\frac{\lambda^{S}e^{-N\lambda}}
+  {\prod_{n=1}^{N}w_n!}.
+\end{align*}
+
+\section*{2.
+  Prior}
+
+The Gamma prior has density
+\[
+  p(\lambda)
+  =\frac{1}{\Gamma(\phi)\psi^{\phi}}
+  \lambda^{\phi-1}e^{-\lambda/\psi},
+  \qquad \lambda>0.
+\]
+
+\section*{3. Apply Bayes' rule}
+
+By Bayes' rule,
+\begin{align*}
+  p(\lambda\mid\mathbf{w})
+   & \propto p(\mathbf{w}\mid\lambda)\,p(\lambda) \\
+   & =\frac{\lambda^{S}e^{-N\lambda}}
+  {\prod_{n=1}^{N}w_n!}
+  \frac{\lambda^{\phi-1}e^{-\lambda/\psi}}
+  {\Gamma(\phi)\psi^{\phi}}                       \\
+   & \propto\lambda^{\phi+S-1}
+  \exp\!\left[-\left(N+\frac{1}{\psi}\right)\lambda\right].
+\end{align*}
+The final proportionality omits only factors that do not depend on $\lambda$.
+
+\section*{4.
+  Normalize and identify the posterior}
+
+Introduce a normalizing constant $C$ and write
+\[
+  p(\lambda\mid\mathbf{w})
+  =C\lambda^{\phi+S-1}
+  \exp\!\left[-\left(N+\frac{1}{\psi}\right)\lambda\right],
+  \qquad \lambda>0.
+\]
+The posterior must integrate to one. Using the substitution
+$t=(N+1/\psi)\lambda$, we obtain
+\begin{align*}
+  1
+   & =\int_{0}^{\infty}p(\lambda\mid\mathbf{w})\,d\lambda \\
+   & =C\int_{0}^{\infty}\lambda^{\phi+S-1}
+  e^{-(N+1/\psi)\lambda}\,d\lambda                        \\
+   & =C\left(N+\frac{1}{\psi}\right)^{-(\phi+S)}
+  \int_{0}^{\infty}t^{\phi+S-1}e^{-t}\,dt.
+\end{align*}
+The remaining integral equals $\Gamma(\phi+S)$, by normalization of the
+Gamma density with shape $\phi+S$ and scale $1$.
+Therefore,
+\[
+  1=C\frac{\Gamma(\phi+S)}
+  {\left(N+\frac{1}{\psi}\right)^{\phi+S}},
+  \qquad
+  C=\frac{\left(N+\frac{1}{\psi}\right)^{\phi+S}}
+  {\Gamma(\phi+S)}.
+\]
+Substituting $C$ gives the normalized posterior density:
+\[
+  \boxed{
+    p(\lambda\mid\mathbf{w})
+    =\frac{\left(N+\frac{1}{\psi}\right)^{\phi+S}}
+    {\Gamma(\phi+S)}
+    \lambda^{\phi+S-1}
+    \exp\!\left[-\left(N+\frac{1}{\psi}\right)\lambda\right],
+    \quad \lambda>0.
+  }
+\]
+Comparing this expression with the Gamma density gives the updated shape
+and scale:
+\[
+  \phi'=\phi+\sum_{n=1}^{N}w_n,
+  \qquad
+  \psi'=\frac{1}{N+1/\psi}
+  =\frac{\psi}{1+N\psi}.
+\]
+Thus,
+\[
+  \boxed{
+    \lambda\mid w_1,\ldots,w_N
+    \sim\operatorname{Gamma}\!\left(
+    \phi+\sum_{n=1}^{N}w_n,
+    \frac{\psi}{1+N\psi}
+    \right)
+    \quad\text{(shape--scale).}
+  }
+\]
+The posterior remains in the Gamma family, so the Gamma prior is conjugate
+to the Poisson likelihood.
+
+\end{document}
