@@ -39,6 +39,18 @@ the alternative as a different set.
   under the chosen assumptions. Estimating theta alone does not complete the
   requested hypothesis test.
 
+## Submission Report Scope
+
+Apply the root `AGENTS.md` report voice and review questions to the submitted
+solution. This file's definitions, student walkthrough, and lecture guide are
+study material, not sections to copy into the report. For this assignment, the
+report needs the observed data, hypotheses, explicit modeling and prior
+choices, both model evidences, the comparison, and a conditional decision.
+Include an extra cross-check, sensitivity example, or caveat only if it repairs
+a real gap in that argument or prevents a likely misunderstanding. Keep other
+useful teaching detail here. Follow any additional requirement in the actual
+assignment prompt.
+
 ## Lecture Evidence
 
 Before explaining or solving this assignment, read the applicable entries in
