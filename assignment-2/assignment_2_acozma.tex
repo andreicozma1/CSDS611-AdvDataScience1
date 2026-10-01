@@ -3,8 +3,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 
+\linespread{1.08}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.5em}
+\setlength{\parskip}{0.7em}
 
 \title{%
   Assignment 2: A Bayesian Test of Coin Fairness\\[0.4em]
@@ -31,29 +32,27 @@ assignment are
   \qquad\text{and}\qquad
   H_A:\theta\in[0,1]\text{ is uncertain}.
 \]
-I assume that, conditional on a common $\theta$, the six flips are independent
-Bernoulli trials. To define the Bayesian alternative, I choose
-$\theta\mid H_A\sim\operatorname{Beta}(1,1)$, whose density is uniform on
-$[0,1]$. For a decision, I assign $P(H_0)=P(H_A)=1/2$ and choose the hypothesis
-with the larger posterior probability (the MAP rule). The assignment specifies
-none of these prior or decision choices, so the numerical decision below is
-conditional on them.
+I assume the flips are independent Bernoulli trials conditional on a shared
+$\theta$.
+
+Under $H_A$, I use $\theta\mid H_A\sim\operatorname{Beta}(1,1)$, which is
+uniform on $[0,1]$. I also set $P(H_0)=P(H_A)=1/2$ and use the MAP rule, which
+chooses the hypothesis with the larger posterior probability.
 
 \section*{Likelihood and model evidence}
 
-For the particular ordered sequence $D$, conditional independence gives
+For the observed sequence, the likelihood is
 \[
   p(D\mid\theta)=\theta^4(1-\theta)^2.
 \]
-Under the fixed fair-coin hypothesis,
+Under $H_0$,
 \[
   p(D\mid H_0)
   =\left(\tfrac12\right)^4\left(\tfrac12\right)^2
   =\frac{1}{64}.
 \]
-Under $H_A$, the model evidence averages the likelihood over the stated
-parameter prior. Because the $\operatorname{Beta}(1,1)$ density equals $1$ on
-$[0,1]$,
+Under $H_A$, I average the likelihood over my $\operatorname{Beta}(1,1)$ prior.
+Its density is $1$ on $[0,1]$, so
 \begin{align*}
   p(D\mid H_A)
     &=\int_0^1 \theta^4(1-\theta)^2\,d\theta \\
@@ -61,18 +60,9 @@ $[0,1]$,
     &=\frac15-\frac13+\frac17
      =\frac{1}{105}.
 \end{align*}
-As a conjugate-prior cross-check, the four heads and two tails update the
-alternative to $\theta\mid D,H_A\sim\operatorname{Beta}(5,3)$. Writing $B$ for
-the beta function, the same evidence is $B(5,3)/B(1,1)=1/105$; heads update the
-first shape parameter and tails the second.
-
-The evidences under $H_0$ and $H_A$ describe the same ordered data. If the data
-are instead represented only by the count of four heads, each evidence is
-multiplied by $\binom64=15$, leaving their ratio unchanged.
-
 \section*{Comparison and decision}
 
-The Bayes factor, oriented as alternative versus null, is
+The Bayes factor for $H_A$ against $H_0$ is
 \[
   \mathrm{BF}_{A0}
   =\frac{p(D\mid H_A)}{p(D\mid H_0)}
@@ -88,29 +78,9 @@ With equal prior probabilities for the hypotheses, Bayes' rule gives
   P(H_A\mid D)
     &=\frac{64}{169}\approx0.379.
 \end{align*}
-The MAP rule therefore selects $H_0$: under the stated assumptions, the six
-flips provide modest evidence in favor of the fair-coin model. This decision
-does not establish that the coin is fair with certainty.
-
-The prior probabilities matter. For general prior odds
-$r=P(H_A)/P(H_0)$, the posterior odds are
-\[
-  \frac{P(H_A\mid D)}{P(H_0\mid D)}=\frac{64}{105}\,r.
-\]
-The MAP rule would instead select $H_A$ if $r>105/64$. Consequently, the
-assignment's hypotheses and six observations alone do not determine a unique
-Bayesian decision without a distribution for $\theta$ under $H_A$, prior
-probabilities for $H_0$ and $H_A$, and a decision rule.
-
-The parameter prior can even reverse the MAP decision. For example, if
-$\theta\mid H_A\sim\operatorname{Beta}(5,3)$ had been specified before observing
-$D$, then $p(D\mid H_A)=B(9,5)/B(5,3)=7/429$, giving
-$\mathrm{BF}_{A0}=448/429>1$. With equal hypothesis priors, the same MAP rule
-would narrowly select $H_A$. This illustrates why the $H_0$ decision above is
-conditional on the chosen parameter prior.
-
-Although the stated interval for $H_A$ includes $\theta=1/2$, a continuous
-uniform prior assigns zero probability to that single value within $H_A$;
-$H_0$ remains a distinct model concentrated at $\theta=1/2$.
+The prompt does not specify a prior for $\theta$ under $H_A$, prior
+probabilities for the two hypotheses, or a decision rule. Under the choices
+stated above, the MAP rule selects $H_0$. The evidence is modest: these six
+flips do not establish that the coin is fair.
 
 \end{document}
