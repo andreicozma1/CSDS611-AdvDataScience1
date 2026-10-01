@@ -61,9 +61,14 @@ $[0,1]$,
     &=\frac15-\frac13+\frac17
      =\frac{1}{105}.
 \end{align*}
-These two evidences describe the same ordered data. If the data are instead
-represented only by the count of four heads, each evidence is multiplied by
-$\binom64=15$, leaving their ratio unchanged.
+As a conjugate-prior cross-check, the four heads and two tails update the
+alternative to $\theta\mid D,H_A\sim\operatorname{Beta}(5,3)$. Writing $B$ for
+the beta function, the same evidence is $B(5,3)/B(1,1)=1/105$; heads update the
+first shape parameter and tails the second.
+
+The evidences under $H_0$ and $H_A$ describe the same ordered data. If the data
+are instead represented only by the count of four heads, each evidence is
+multiplied by $\binom64=15$, leaving their ratio unchanged.
 
 \section*{Comparison and decision}
 
@@ -94,9 +99,18 @@ $r=P(H_A)/P(H_0)$, the posterior odds are
 \]
 The MAP rule would instead select $H_A$ if $r>105/64$. Consequently, the
 assignment's hypotheses and six observations alone do not determine a unique
-Bayesian decision without a prior and decision rule. Although the stated
-interval for $H_A$ includes $\theta=1/2$, a continuous uniform prior assigns
-zero probability to that single value within $H_A$; $H_0$ remains a distinct
-model concentrated at $\theta=1/2$.
+Bayesian decision without a distribution for $\theta$ under $H_A$, prior
+probabilities for $H_0$ and $H_A$, and a decision rule.
+
+The parameter prior can even reverse the MAP decision. For example, if
+$\theta\mid H_A\sim\operatorname{Beta}(5,3)$ had been specified before observing
+$D$, then $p(D\mid H_A)=B(9,5)/B(5,3)=7/429$, giving
+$\mathrm{BF}_{A0}=448/429>1$. With equal hypothesis priors, the same MAP rule
+would narrowly select $H_A$. This illustrates why the $H_0$ decision above is
+conditional on the chosen parameter prior.
+
+Although the stated interval for $H_A$ includes $\theta=1/2$, a continuous
+uniform prior assigns zero probability to that single value within $H_A$;
+$H_0$ remains a distinct model concentrated at $\theta=1/2$.
 
 \end{document}
