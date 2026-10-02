@@ -25,7 +25,8 @@ The observed sequence is
   D=(H,H,H,T,T,H),
   \qquad n=6,\qquad k=4\text{ heads and }2\text{ tails}.
 \]
-Let $\theta$ be the probability of heads on one flip. The hypotheses in the
+Let $\theta$ be the probability of heads on one flip.
+The hypotheses in the
 assignment are
 \[
   H_0:\theta=\tfrac12
@@ -36,7 +37,8 @@ I assume the flips are independent Bernoulli trials conditional on a shared
 $\theta$.
 
 Under $H_A$, I use $\theta\mid H_A\sim\operatorname{Beta}(1,1)$, which is
-uniform on $[0,1]$. I also set $P(H_0)=P(H_A)=1/2$ and use the MAP rule, which
+uniform on $[0,1]$.
+I also set $P(H_0)=P(H_A)=1/2$ and use the MAP rule, which
 chooses the hypothesis with the larger posterior probability.
 
 \section*{Likelihood and model evidence}
@@ -55,10 +57,10 @@ Under $H_A$, I average the likelihood over my $\operatorname{Beta}(1,1)$ prior.
 Its density is $1$ on $[0,1]$, so
 \begin{align*}
   p(D\mid H_A)
-    &=\int_0^1 \theta^4(1-\theta)^2\,d\theta \\
-    &=\int_0^1 (\theta^4-2\theta^5+\theta^6)\,d\theta \\
-    &=\frac15-\frac13+\frac17
-     =\frac{1}{105}.
+   & =\int_0^1 \theta^4(1-\theta)^2\,d\theta          \\
+   & =\int_0^1 (\theta^4-2\theta^5+\theta^6)\,d\theta \\
+   & =\frac15-\frac13+\frac17
+  =\frac{1}{105}.
 \end{align*}
 \section*{Comparison and decision}
 
@@ -73,14 +75,15 @@ Thus these data favor $H_0$ over $H_A$ by a factor of $105/64\approx1.64$.
 With equal prior probabilities for the hypotheses, Bayes' rule gives
 \begin{align*}
   P(H_0\mid D)
-    &=\frac{(1/64)(1/2)}{(1/64)(1/2)+(1/105)(1/2)}
-     =\frac{105}{169}\approx0.621, \\
+   & =\frac{(1/64)(1/2)}{(1/64)(1/2)+(1/105)(1/2)}
+  =\frac{105}{169}\approx0.621,                    \\
   P(H_A\mid D)
-    &=\frac{64}{169}\approx0.379.
+   & =\frac{64}{169}\approx0.379.
 \end{align*}
-The prompt does not specify a prior for $\theta$ under $H_A$, prior
-probabilities for the two hypotheses, or a decision rule. Under the choices
-stated above, the MAP rule selects $H_0$. The evidence is modest: these six
+
+Under the choices
+stated above, the MAP rule selects $H_0$.
+The evidence is modest: these six
 flips do not establish that the coin is fair.
 
 \end{document}
