@@ -26,7 +26,8 @@ defaults.
 ### Build the answer around the task
 
 - Start with the given data or question and define only notation needed for the
-  solution. State modeling choices as choices, separate from facts in the prompt.
+  solution. State modeling choices as choices, separate from facts stated in the
+  assignment.
 - Organize by the steps the reader needs to verify: setup, method or calculation,
   comparison or result, and a direct conclusion. Use only headings that help a
   reader find those steps; the exact headings can vary with the assignment.
