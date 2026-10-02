@@ -48,6 +48,10 @@ defaults.
 - Use first person for a genuine author choice ("I assume...", "I use...")
   when it makes ownership clearer. State calculations and results directly.
   Neither first person nor impersonal phrasing needs to appear in every paragraph.
+- In submitted prose, name the assignment or question when necessary, or state
+  the relevant fact directly. Do not call the assignment "the prompt"; that is
+  drafting language. In study notes or instructions, "assignment prompt" may
+  identify the source document.
 - Keep paragraphs focused and reasonably short. Pair displayed equations with
   enough nearby prose to say what they calculate and why the result matters.
 - Avoid ceremonial or textbook-like openings ("We now turn our attention to"),
@@ -69,7 +73,7 @@ justifies it; do not rewrite merely to satisfy a word-count rule.
 
 1. Can the instructor locate the requested answer and trace each essential
    result back to the given data, assumptions, and calculation?
-2. Is every assumption or author choice labeled, while the prompt's facts and
+2. Is every assumption or author choice labeled, while the assignment's facts and
    required hypotheses remain exact?
 3. Does each paragraph perform a job needed for the answer: set up a quantity,
    justify a step, interpret a result, or state a relevant limit? If removed,
