@@ -1,0 +1,125 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{titling}
+
+\linespread{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+
+\setlength{\droptitle}{-2em}
+\pretitle{\centering\Large\bfseries\setlength{\parskip}{0pt}}
+\posttitle{\par\vspace{0.3em}}
+\preauthor{\centering\normalsize\setlength{\parskip}{0pt}}
+\postauthor{\par}
+\predate{}
+\postdate{}
+
+\title{%
+  Assignment 3: Derivative of a Gaussian Process\\[0.25em]
+  {\normalsize\normalfont CSDS 611 --- Advanced Topics and Methods of Data Science I}%
+}
+\author{Andrei Cozma}
+\date{}
+
+\begin{document}
+\maketitle
+
+Let $f\sim\mathrm{GP}_{\mathbb R}(\mu,C)$, where $\mu$ is continuously
+differentiable and
+\[
+  C(x,x')=\sigma^2\exp\!\left(-\frac{(x-x')^2}{2\ell^2}\right),
+  \qquad x,x'\in\mathbb R,\quad \sigma^2\geq0,\quad\ell>0.
+\]
+I interpret $f'$ as a mean-square derivative: the difference quotients
+converge with expected squared error tending to zero.
+For $h\ne0$, define the finite difference
+\[
+  D_h(x)=\frac{f(x+h)-f(x)}h.
+\]
+To prove that $f'$ is a Gaussian process, its values at every finite
+collection of inputs must be jointly Gaussian.
+For any $N$ and inputs $x_1,\ldots,x_N$, the vector
+$(D_h(x_1),\ldots,D_h(x_N))^t$ is a linear transformation of the
+jointly Gaussian values of $f$ at $x_i$ and $x_i+h$.
+It is therefore jointly Gaussian.
+
+Linearity of expectation gives
+\[
+  \mu_h(x):=\mathbb E[D_h(x)]
+  =\frac{\mu(x+h)-\mu(x)}h
+  \longrightarrow\mu'(x).
+\]
+Using two step sizes lets us compare different approximations and establish
+that a derivative limit exists. For $h,r\ne0$, expanding the covariance gives
+\begin{align*}
+  R_{h,r}(x,x')
+  &:=\operatorname{Cov}(D_h(x),D_r(x'))\\
+  &=\frac{C(x+h,x'+r)-C(x+h,x')-C(x,x'+r)+C(x,x')}{hr}.
+\end{align*}
+Write $C_{\partial}(x,x'):=\partial^2 C(x,x')/(\partial x\,\partial x')$.
+Since these mixed derivatives are continuous, the fundamental theorem of
+calculus gives
+\[
+  R_{h,r}(x,x')
+  =\int_0^1\!\int_0^1 C_{\partial}(x+th,x'+sr)\,ds\,dt
+  \longrightarrow C_{\partial}(x,x')\qquad(h,r\to0).
+\]
+The integral averages the continuous mixed derivative at points approaching
+$(x,x')$, so it converges to $C_{\partial}(x,x')$.
+For each fixed $x$, it follows that
+\begin{align*}
+  \mathbb E\bigl[|D_h(x)-D_r(x)|^2\bigr]
+  &=R_{h,h}(x,x)+R_{r,r}(x,x)-2R_{h,r}(x,x)\\
+  &\quad+\bigl(\mu_h(x)-\mu_r(x)\bigr)^2
+  \longrightarrow0\qquad(h,r\to0).
+\end{align*}
+Each covariance tends to $C_{\partial}(x,x)$, so the first three terms
+cancel in the limit. Both means tend to $\mu'(x)$, so the final term
+also tends to zero.
+Thus the difference quotients satisfy the Cauchy criterion for convergence
+in mean square. Their limit, denoted by $f'(x)$, satisfies
+\[
+  \mathbb E\bigl[|D_h(x)-f'(x)|^2\bigr]\longrightarrow0.
+\]
+By the Cauchy--Schwarz inequality, mean-square convergence implies convergence
+of means and covariances. Therefore,
+\[
+  \mathbb E[f'(x)]=\mu'(x),
+  \qquad
+  \operatorname{Cov}(f'(x),f'(x'))=C_{\partial}(x,x').
+\]
+For any finite collection of inputs, the Gaussian vectors of finite
+differences converge in mean square to the vector of derivative values.
+Their mean vectors and covariance matrices converge to those just
+calculated. Gaussian distributions with convergent means and covariance
+matrices have a Gaussian limiting distribution, so these derivative
+values are jointly Gaussian. Since the inputs and $N$ were arbitrary,
+$f'$ is a Gaussian process.
+
+Differentiating the squared exponential kernel gives
+\begin{align*}
+  \frac{\partial C(x,x')}{\partial x}
+  &=-\frac{x-x'}{\ell^2}C(x,x'),\\
+  C_{\partial}(x,x')
+  &=\frac{\partial}{\partial x'}
+    \left[-\frac{x-x'}{\ell^2}C(x,x')\right]\\
+  &=\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)C(x,x').
+\end{align*}
+The kernel is symmetric, and the derivative variance is
+$C_{\partial}(x,x)=\sigma^2/\ell^2$.
+Positive semidefiniteness follows because $C_{\partial}$ is the covariance
+of the derivative process.
+
+Therefore,
+\[
+  \boxed{\begin{gathered}
+    f'\sim\mathrm{GP}_{\mathbb R}(\mu',C_{\partial}),\\[0.4em]
+    C_{\partial}(x,x')=
+    \sigma^2\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)
+    \exp\!\left(-\frac{(x-x')^2}{2\ell^2}\right).
+  \end{gathered}}
+\]
+
+\end{document}
