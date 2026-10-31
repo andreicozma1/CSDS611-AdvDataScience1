@@ -3,8 +3,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{titling}
+\usepackage{comment}
 
-\linespread{1.15}
+\linespread{1.5}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.7em}
 
@@ -23,21 +24,150 @@
 \author{Andrei Cozma}
 \date{}
 
+\begin{comment}
+PREPARATION NOTES: PURPOSE AND MAP
+
+These comments are a detailed companion to the short submitted solution.
+They explain mathematical rationale, likely questions, and supporting
+calculations. They are not printed and do not claim that the author has
+demonstrated mastery or personally followed a particular discovery sequence.
+The questions are preparation prompts, not predictions of an actual exam.
+
+Notes 01--04: objective, derivative interpretation, finite differences,
+and joint Gaussianity. Notes 05--08: two step sizes, covariance expansion,
+mixed derivatives, and existence. Notes 09--12: moment convergence,
+Gaussian limits, kernel calculus, and covariance validity. Notes 13--15:
+additional questions, sources/evidence, and readiness checks.
+Numbered blocks appear beside the corresponding proof steps.
+Course-file paths below are relative to the repository root.
+\end{comment}
 \begin{document}
 \maketitle
 
+\begin{comment}
+PREPARATION 01: WHAT MUST BE PROVED, AND WHAT IS GIVEN?
+
+A process g on R is Gaussian if, for every positive integer N and every
+choice x_1,...,x_N in R, (g(x_1),...,g(x_N))^t is a Gaussian vector.
+The task is to establish this for the derivative, and find its mean
+and covariance.
+Individually normal values, or even pairwise Gaussian
+values, do not establish the definition for arbitrary finite collections.
+Mean and covariance formulas alone do not establish Gaussianity:
+processes that are not Gaussian can share those same two moments.
+
+Given: f ~ GP_R(mu,C), mu is continuously differentiable, and C is squared
+exponential.
+The sigma^2, ell parameterization matches Lecture 18, slide 10.
+No zero mean, unit parameters, independent values, observations, or noise
+model are assumed.
+The mean's regularity controls its difference-quotient
+limit; the kernel's regularity controls the random derivative's existence.
+
+The logical route is: approximate derivatives by linear combinations of
+GP values; calculate moments; prove convergence; establish joint Gaussianity
+of the limits; evaluate the mixed derivative of C. No data fitting or
+numerical experiment is required by this theoretical task.
+\end{comment}
 Let $f\sim\mathrm{GP}_{\mathbb R}(\mu,C)$, where $\mu$ is continuously
 differentiable and
 \[
   C(x,x')=\sigma^2\exp\!\left(-\frac{(x-x')^2}{2\ell^2}\right),
   \qquad x,x'\in\mathbb R,\quad \sigma^2\geq0,\quad\ell>0.
 \]
+\begin{comment}
+PREPARATION 02: WHY MEAN-SQUARE DIFFERENTIATION?
+WHAT IS ITS SCOPE?
+
+At a fixed x, a mean-square derivative is a random variable g(x) satisfying
+E[ |(f(x+h)-f(x))/h - g(x)|^2 ] -> 0 as h -> 0.
+The report calls g(x) f'(x).
+This convergence notion measures expected squared error over randomness
+in f and is suited to a proof using means and covariances.
+
+Ordinary sample-function differentiation fixes an outcome omega and
+differentiates the real function x -> f(x,omega).
+A mean-square derivative
+alone does not establish differentiability of individual sample functions,
+a limit for every outcome, or a limit uniform over all x.
+At a fixed input,
+mean-square convergence does imply convergence in probability, since
+P(|D_h(x)-g(x)| > epsilon) <= E|D_h(x)-g(x)|^2/epsilon^2 for epsilon>0.
+
+The assignment does not specify a convergence notion.
+Mean-square
+differentiation is this report's explicit interpretation, not a requirement
+attributed to the instructor.
+GPML, section 4.1.1, uses this framework:
+https://gaussianprocess.org/gpml/chapters/RW4.pdf
+This is supporting background, not a theorem proved in the inspected slides.
+
+Earlier development also considered ordinary sample-function derivatives.
+The centered squared exponential process has a smooth modification; adding
+the given C^1 mean preserves first-order differentiability.
+A modification
+agrees with the original process almost surely at each fixed input, which
+does not mean simultaneous agreement at all inputs for an arbitrary original
+version.
+For a differentiable modification, the difference quotients converge
+almost surely to its ordinary derivative.
+Their mean-square limit is the
+same at each fixed input, by uniqueness of limits in probability.
+This connection requires a separate sample-function regularity result; the
+submitted argument does not establish it.
+A consulted source is Paciorek
+and Schervish, Nonstationary Covariance Functions for Gaussian Process
+Regression, section 2:
+https://www.stat.berkeley.edu/users/paciorek/diss/paci.sche.2004.pdf
+Do not claim that this report proves the stronger pathwise statement, or
+that the full process has infinitely many derivatives when mu is only C^1.
+If ordinary sample-function differentiation is required, an additional
+regularity justification is needed; renaming a mean-square limit is not one.
+
+\end{comment}
+\begin{comment}
+PREPARATION 03: HOW DOES THE DERIVATIVE SUGGEST FINITE DIFFERENCES?
+
+A derivative is a limit of secant slopes.
+For nonzero h, D_h(x) below is
+the slope between x and x+h.
+Its coefficients 1/h and -1/h are deterministic,
+so it is a linear combination of two jointly Gaussian function values.
+This connects the calculus definition to the Gaussian transformation
+property from class.
+Differentiation itself is linear wherever defined:
+(a f + b g)' = a f' + b g' for deterministic constants a,b.
+Linearity motivates the approach but does not prove existence of the limit.
+The finite-difference convergence argument supplies that missing step.
+The input domain R permits small positive and negative steps.
+\end{comment}
 I interpret $f'$ as a mean-square derivative: the difference quotients
 converge with expected squared error tending to zero.
-For $h\ne0$, define the finite difference
+For $h\ne0$, define the difference quotient
 \[
   D_h(x)=\frac{f(x+h)-f(x)}h.
 \]
+\begin{comment}
+PREPARATION 04: WHY JOINT GAUSSIANITY?
+IS INDEPENDENCE NEEDED?
+
+Fix any N inputs.
+Form the 2N-dimensional column vector
+F_h=(f(x_1+h),...,f(x_N+h),f(x_1),...,f(x_N))^t.
+The GP definition makes F_h jointly Gaussian.
+The difference vector is
+D_h=(1/h)[I_N, -I_N] F_h, using an N by 2N matrix.
+The general affine transformation property Y=a+BX, with a=0 and
+B=(1/h)[I_N,-I_N], proves joint Gaussianity of the approximations.
+Relevant course results: Lecture 07, slide 5; Lecture 17, slides 6--7.
+
+No independence is assumed: nearby function values may be strongly
+correlated.
+Repeated inputs are permitted and can make covariance matrices
+singular.
+A singular Gaussian law is valid; the process definition does
+not require an invertible covariance or a probability density.
+\end{comment}
 To prove that $f'$ is a Gaussian process, its values at every finite
 collection of inputs must be jointly Gaussian.
 For any $N$ and inputs $x_1,\ldots,x_N$, the vector
@@ -49,16 +179,82 @@ Linearity of expectation gives
 \[
   \mu_h(x):=\mathbb E[D_h(x)]
   =\frac{\mu(x+h)-\mu(x)}h
-  \longrightarrow\mu'(x).
+  \xrightarrow{h\to0}\mu'(x).
 \]
-Using two step sizes lets us compare different approximations and establish
-that a derivative limit exists. For $h,r\ne0$, expanding the covariance gives
+\begin{comment}
+PREPARATION 05: WHY TWO STEP SIZES h AND r?
+
+Compare D_h(x) and D_r(x) at the same fixed x as h,r -> 0.
+Showing E|D_h(x)-D_r(x)|^2 -> 0 establishes that the family is Cauchy in
+mean square.
+Comparing arbitrarily fine approximations establishes a limit
+before its value is known.
+The step sizes are deterministic; varying them
+separately does not mean that any random quantities are independent.
+
+A finite limit for Var(D_h(x)) alone would not establish convergence of
+random variables on the original probability space.
+Even convergent Gaussian
+marginal laws would not, alone, establish a mean-square limit: consistency
+between different approximations depends on their cross-covariances.
+The two-step expression provides the cross-covariances in the Cauchy test.
+
+\end{comment}
+\begin{comment}
+PREPARATION 06: WHERE DO THE FOUR COVARIANCE TERMS COME FROM?
+
+For square-integrable real random variables A,B,U,V, bilinearity gives
+Cov(A-B,U-V)=Cov(A,U)-Cov(A,V)-Cov(B,U)+Cov(B,V).
+Substitute A=f(x+h), B=f(x), U=f(x'+r), V=f(x'), and divide by hr.
+Use C(u,v)=Cov(f(u),f(v)) to obtain the four kernel terms below.
+The two cross terms are negative; the last term has two minus signs
+and is positive.
+Nonzero means and dependent values are allowed.
+Centering f first is optional, rather than necessary for this calculation.
+\end{comment}
+To show that the difference quotients converge, compare the approximations
+for two step sizes, $h$ and $r$.
+For $h,r\ne0$, expanding the covariance gives
 \begin{align*}
   R_{h,r}(x,x')
-  &:=\operatorname{Cov}(D_h(x),D_r(x'))\\
-  &=\frac{C(x+h,x'+r)-C(x+h,x')-C(x,x'+r)+C(x,x')}{hr}.
+   & :=\operatorname{Cov}(D_h(x),D_r(x'))                 \\
+   & =\frac{C(x+h,x'+r)-C(x+h,x')-C(x,x'+r)+C(x,x')}{hr}.
 \end{align*}
-Write $C_{\partial}(x,x'):=\partial^2 C(x,x')/(\partial x\,\partial x')$.
+\begin{comment}
+PREPARATION 07: WHY A MIXED DERIVATIVE AND A DOUBLE INTEGRAL?
+
+Let C_partial(u,v)=partial_u partial_v C(u,v).
+The numerator of R_{h,r}
+is a finite difference in each kernel input.
+Applying the fundamental
+theorem of calculus in the second input and then the first gives
+
+C(x+h,x'+r)-C(x+h,x')-C(x,x'+r)+C(x,x')
+= integral_0^r [partial_2 C(x+h,x'+v)-partial_2 C(x,x'+v)] dv
+= integral_0^r integral_0^h C_partial(x+u,x'+v) du dv.
+
+Continuity allows interchange of the integrals.
+Substitute u=ht and v=rs,
+then divide by hr.
+The Jacobian factors cancel the denominator, leaving
+the displayed unit-square integral.
+Oriented integrals and the substitutions
+also handle negative steps.
+Do not insert absolute values into hr.
+
+As h,r -> 0, all arguments (x+th,x'+sr), for s,t in [0,1], approach (x,x').
+Continuity of C_partial gives uniform convergence over the shrinking
+rectangle, so its average tends to C_partial(x,x').
+Mere continuity of C
+would not justify this conclusion.
+Continuous mixed second derivatives
+suffice locally for this first-derivative argument; infinite smoothness
+of the squared exponential kernel is more than is needed here.
+\end{comment}
+Write
+\[
+  C_{\partial}(x,x'):=\frac{\partial^2 C(x,x')}{\partial x\,\partial x'}.
+\]
 Since these mixed derivatives are continuous, the fundamental theorem of
 calculus gives
 \[
@@ -68,45 +264,200 @@ calculus gives
 \]
 The integral averages the continuous mixed derivative at points approaching
 $(x,x')$, so it converges to $C_{\partial}(x,x')$.
+\begin{comment}
+PREPARATION 08: WHY DOES THE CAUCHY CALCULATION GIVE EXISTENCE?
+
+For any square-integrable real Z, E[Z^2]=Var(Z)+(E[Z])^2.
+Set Z=D_h(x)-D_r(x).
+Its variance is
+R_{h,h}(x,x)+R_{r,r}(x,x)-2R_{h,r}(x,x), and its mean is mu_h(x)-mu_r(x).
+Each covariance tends to C_partial(x,x), so these terms cancel as K+K-2K=0,
+where K=C_partial(x,x).
+Both means tend to mu'(x).
+
+The space L^2 consists of random variables with finite second moment,
+identified when equal almost surely, with norm ||X||_2=(E|X|^2)^(1/2).
+It is complete: every Cauchy sequence in this norm has an L^2 limit.
+Take any sequence h_n -> 0, h_n != 0.
+The two-step bound makes D_{h_n}(x)
+Cauchy, giving a limit g(x).
+Comparing arbitrary h with h_n using the
+same bound shows that the whole family D_h(x) -> g(x).
+The limit does
+not depend on the selected sequence; it is denoted f'(x).
+
+Each fixed D_h(x) belongs to L^2 because it is a finite linear combination
+of GP values with finite means and variances.
+This proves existence on
+the original probability space rather than merely proposing derivative
+moments.
+The argument does not establish a uniform-in-x or pathwise limit.
+\end{comment}
 For each fixed $x$, it follows that
 \begin{align*}
   \mathbb E\bigl[|D_h(x)-D_r(x)|^2\bigr]
-  &=R_{h,h}(x,x)+R_{r,r}(x,x)-2R_{h,r}(x,x)\\
-  &\quad+\bigl(\mu_h(x)-\mu_r(x)\bigr)^2
+   & =R_{h,h}(x,x)+R_{r,r}(x,x)-2R_{h,r}(x,x) \\
+   & \quad+\bigl(\mu_h(x)-\mu_r(x)\bigr)^2
   \longrightarrow0\qquad(h,r\to0).
 \end{align*}
 Each covariance tends to $C_{\partial}(x,x)$, so the first three terms
-cancel in the limit. Both means tend to $\mu'(x)$, so the final term
+cancel in the limit.
+Both means tend to $\mu'(x)$, so the final term
 also tends to zero.
-Thus the difference quotients satisfy the Cauchy criterion for convergence
-in mean square. Their limit, denoted by $f'(x)$, satisfies
+Thus the difference quotients are Cauchy in mean square: their expected
+squared difference tends to zero as both step sizes shrink.
+The Cauchy
+criterion therefore gives a mean-square limit, which I denote by $f'(x)$.
+This limit satisfies
 \[
-  \mathbb E\bigl[|D_h(x)-f'(x)|^2\bigr]\longrightarrow0.
+  \mathbb E\bigl[|D_h(x)-f'(x)|^2\bigr]\xrightarrow{h\to0}0.
 \]
-By the Cauchy--Schwarz inequality, mean-square convergence implies convergence
-of means and covariances. Therefore,
+\begin{comment}
+PREPARATION 09: WHY MAY EXPECTATIONS AND COVARIANCES PASS TO THE LIMIT?
+
+Let X_h -> X and Y_h -> Y in L^2, with ||Z||_2=(E|Z|^2)^(1/2).
+Cauchy--Schwarz gives
+|E[X_h]-E[X]| <= E|X_h-X| <= ||X_h-X||_2 -> 0.
+For products, X_h Y_h - X Y = (X_h-X)Y_h + X(Y_h-Y), so
+|E[X_h Y_h]-E[X Y]|
+<= ||X_h-X||_2 ||Y_h||_2 + ||X||_2 ||Y_h-Y||_2 -> 0.
+The first term tends to zero because ||Y_h||_2 is bounded by
+||Y||_2+||Y_h-Y||_2.
+Subtracting the convergent products of expectations
+gives convergence of Cov(X_h,Y_h)=E[X_h Y_h]-E[X_h]E[Y_h].
+
+Apply this with X_h=D_h(x), Y_h=D_h(x'), X=f'(x), Y=f'(x').
+The previously calculated moment limits give E[f'(x)]=mu'(x) and
+Cov(f'(x),f'(x'))=C_partial(x,x').
+No independence is required.
+This supports the report's short statement without assuming that
+differentiation may always be interchanged with expectation.
+\end{comment}
+The Cauchy--Schwarz inequality lets us pass the means and covariances
+to the limit:
 \[
   \mathbb E[f'(x)]=\mu'(x),
   \qquad
   \operatorname{Cov}(f'(x),f'(x'))=C_{\partial}(x,x').
 \]
-For any finite collection of inputs, the Gaussian vectors of finite
-differences converge in mean square to the vector of derivative values.
-Their mean vectors and covariance matrices converge to those just
-calculated. Gaussian distributions with convergent means and covariance
-matrices have a Gaussian limiting distribution, so these derivative
-values are jointly Gaussian. Since the inputs and $N$ were arbitrary,
-$f'$ is a Gaussian process.
+\begin{comment}
+PREPARATION 10: WHY IS THE LIMIT STILL JOINTLY GAUSSIAN?
 
+Fix any N inputs and let D_h=(D_h(x_1),...,D_h(x_N))^t and
+G=(f'(x_1),...,f'(x_N))^t.
+Coordinatewise mean-square convergence gives
+E||D_h-G||^2=sum_i E|D_h(x_i)-f'(x_i)|^2 -> 0.
+Therefore the finite vector converges in mean square, in probability,
+and in distribution.
+Separate normal marginal laws would not suffice.
+
+For a direct distributional argument, set m_h=(mu_h(x_i))_i and
+V_h=(R_{h,h}(x_i,x_j))_{i,j}.
+For each real column t in R^N,
+the Gaussian characteristic function is
+phi_h(t)=E[exp(i t^t D_h)]=exp(i t^t m_h-(1/2)t^t V_h t), with i^2=-1.
+The limits are m=(mu'(x_i))_i and V=(C_partial(x_i,x_j))_{i,j}.
+Thus phi_h(t) -> exp(i t^t m-(1/2)t^t V t), the characteristic function
+of the claimed Gaussian law.
+Uniqueness of the distributional limit
+identifies G with that law.
+The matrix V is positive semidefinite as
+a limit of covariance matrices, and may be singular.
+
+Convergence of means and covariances alone does NOT determine limiting
+laws for arbitrary distributions.
+It suffices here because the finite-step
+vectors are already Gaussian.
+N and the input points were arbitrary, so
+the derivative is a GP by definition.
+Independence of its values is not
+needed or claimed.
+\end{comment}
+For any finite collection of inputs, the vectors of difference quotients
+converge in mean square to the vector of derivative values.
+For a finite vector, the expected squared error is the sum of the expected
+squared errors of its coordinates.
+Since each of these tends to zero,
+the vector also converges in mean square.
+The approximating vectors are Gaussian, and their mean vectors and
+covariance matrices converge to those calculated above.
+Their limit is
+therefore Gaussian.
+Since this holds for every finite collection of
+inputs, $f'$ is a Gaussian process.
+
+\begin{comment}
+PREPARATION 11: WHY DIFFERENTIATE EACH INPUT?
+HOW DO THE SIGNS WORK?
+
+C(x,x') relates f(x) and f(x').
+Differentiating the first random quantity
+acts on x, and differentiating the second acts on x'.
+The finite-difference
+covariance calculation proves this rule:
+Cov(f'(x),f'(x'))=partial_x partial_x' C(x,x'), not partial_x^2 C.
+
+Set d=x-x' and C=sigma^2 exp(-d^2/(2 ell^2)).
+Then
+partial_x d=1, partial_x' d=-1,
+partial_x C=-(d/ell^2)C, and partial_x' C=+(d/ell^2)C.
+The product rule gives
+partial_x'[-(d/ell^2)C]=[1/ell^2]C-[d/ell^2][d/ell^2]C
+=(1/ell^2-d^2/ell^4)C.
+The positive first term comes from differentiating -(x-x').
+Setting x'=x BEFORE differentiation loses the input dependence and
+would incorrectly differentiate a constant diagonal value.
+
+Related identities use just one derivative:
+Cov(f(x),f'(x'))=partial_x' C=(d/ell^2)C,
+Cov(f'(x),f(x'))=partial_x C=-(d/ell^2)C.
+Swapping the quantities and their inputs preserves covariance symmetry.
+The general derivative-observation identities appear in GPML, section 9.4:
+https://gaussianprocess.org/gpml/chapters/RW9.pdf
+\end{comment}
 Differentiating the squared exponential kernel gives
 \begin{align*}
   \frac{\partial C(x,x')}{\partial x}
-  &=-\frac{x-x'}{\ell^2}C(x,x'),\\
+   & =-\frac{x-x'}{\ell^2}
+  C(x,x'),                                                        \\
+  \frac{\partial C(x,x')}{\partial x'}
+   & =\frac{x-x'}{\ell^2}C(x,x'),                                 \\
   C_{\partial}(x,x')
-  &=\frac{\partial}{\partial x'}
-    \left[-\frac{x-x'}{\ell^2}C(x,x')\right]\\
-  &=\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)C(x,x').
+   & =\frac{\partial}{\partial x'}
+  \left[-\frac{x-x'}{\ell^2}C(x,x')\right]                        \\
+   & =\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)C(x,x').
 \end{align*}
+\begin{comment}
+PREPARATION 12: IS THE RESULT A VALID COVARIANCE KERNEL?
+
+Symmetry follows from dependence on (x-x')^2.
+The diagonal
+C_partial(x,x)=sigma^2/ell^2 is the derivative variance.
+Symmetry and
+a nonnegative diagonal alone do not establish positive semidefiniteness.
+For arbitrary finite inputs x_i and real coefficients a_i,
+sum_{i,j} a_i a_j C_partial(x_i,x_j)
+= Var(sum_i a_i f'(x_i)) >= 0.
+This is the quadratic-form test for a valid covariance kernel.
+Alternatively, finite-difference covariance matrices are positive
+semidefinite and their quadratic-form inequalities persist under limits.
+
+For sigma^2>0, covariance is zero at separation ell and negative when
+|x-x'|>ell.
+Negative off-diagonal entries are permitted; positive
+semidefiniteness does not mean entrywise positivity.
+A positive deviation
+of one slope from its mean is then negatively correlated with a sufficiently
+separated slope's deviation.
+This is a statement about random fluctuations,
+not a claim that the mean slopes must have opposite signs.
+
+If x has units U and f has units V, ell has units U and sigma^2 has units
+V^2, so C_partial has units V^2/U^2.
+Larger sigma increases slope
+variability; smaller ell increases derivative variance as sigma^2/ell^2.
+Such checks support the algebra but do not replace the existence proof.
+\end{comment}
 The kernel is symmetric, and the derivative variance is
 $C_{\partial}(x,x)=\sigma^2/\ell^2$.
 Positive semidefiniteness follows because $C_{\partial}$ is the covariance
@@ -114,12 +465,172 @@ of the derivative process.
 
 Therefore,
 \[
-  \boxed{\begin{gathered}
-    f'\sim\mathrm{GP}_{\mathbb R}(\mu',C_{\partial}),\\[0.4em]
-    C_{\partial}(x,x')=
-    \sigma^2\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)
-    \exp\!\left(-\frac{(x-x')^2}{2\ell^2}\right).
-  \end{gathered}}
+  \boxed{
+    \begin{gathered}
+      f'\sim\mathrm{GP}_{\mathbb R}(\mu',C_{\partial}),\\
+      C_{\partial}(x,x')=
+      \sigma^2\left(\frac1{\ell^2}-\frac{(x-x')^2}{\ell^4}\right)
+      \exp\!\left(-\frac{(x-x')^2}{2\ell^2}\right).
+    \end{gathered}
+  }
 \]
 
+\begin{comment}
+PREPARATION 13: ADDITIONAL FOLLOW-UP QUESTIONS
+
+(a) Where is the assumption on mu used?
+mu_h(x)=[mu(x+h)-mu(x)]/h -> mu'(x).
+The Cauchy calculation's mean-difference
+term uses the same limit.
+No zero-mean assumption is needed.
+Continuous
+differentiability is given; pointwise differentiability at the inputs is
+enough for these particular mean limits.
+
+(b) Does a smooth mean imply differentiable random functions?
+No. The mean describes a deterministic expected value; the covariance
+controls second-order behavior of the random fluctuations.
+A process with
+a smooth mean can lack mean-square derivatives.
+Both the mean limit and
+kernel regularity must be checked.
+
+(c) Does the method work for every GP?
+No. It applies more generally when the mean is differentiable and the
+needed mixed kernel derivatives are continuous near the relevant input
+pairs.
+In contrast, with zero mean and exponential covariance
+C(x,x')=sigma^2 exp(-|x-x'|/ell), sigma^2>0,
+Var(D_h(x))=2 sigma^2(1-exp(-|h|/ell))/h^2
+~ 2 sigma^2/(ell |h|) -> infinity.
+An L^2-convergent family has bounded L^2 norms, so a mean-square derivative
+cannot exist there.
+Kernel continuity alone is insufficient.
+
+(d) Is the derivative process stationary?
+Its covariance is stationary because it depends only on x-x'.
+Its mean
+mu'(x) need not be constant, so the full process need not be stationary.
+For example, mu(x)=x^2 gives derivative mean 2x.
+The centered derivative
+has zero mean and stationary covariance and is stationary in its Gaussian
+finite-dimensional laws.
+Constant mu' gives stationarity of the derivative
+process itself.
+Stationary C alone likewise does not establish stationarity
+of the original noncentered f.
+
+(e) What happens when ell changes?
+ell>0 controls the input scale of correlation.
+At fixed sigma^2, derivative
+variance is sigma^2/ell^2, so shorter scales allow more variable slopes.
+Derivative covariance changes sign at separation ell.
+This concerns random
+fluctuations; arbitrary mu'(x) can independently supply a large mean slope.
+
+(f) Can the argument be repeated for f''?
+The centered squared exponential process has kernel regularity sufficient
+for every finite-order mean-square derivative.
+The full process also needs
+the corresponding mean derivatives.
+Only mu in C^1 is supplied here, so
+one cannot conclude that f'' exists everywhere.
+With appropriate regularity,
+derivative orders p,q have covariance partial_x^p partial_x'^q C(x,x').
+Existence still needs justification beyond formal differentiation.
+
+(g) What if sigma^2=0, or inputs are repeated?
+If sigma^2=0, f(x)=mu(x) almost surely at each fixed x, and f'(x)=mu'(x)
+has zero covariance.
+This is a degenerate Gaussian process.
+Pointwise
+almost-sure equality need not be simultaneous over an uncountable input
+set for an arbitrary version.
+Repeated inputs may likewise cause singular
+covariance matrices and remain valid in the GP definition.
+
+\end{comment}
+\begin{comment}
+PREPARATION 14: RATIONALE, SOURCES, PROCESS, AND EVIDENCE
+
+The mathematical rationale is to express derivatives through finite
+differences, apply Gaussian linear transformations, calculate moments,
+verify convergence, and evaluate the mixed kernel derivative.
+This records
+why the method works.
+It does not establish a personal discovery sequence.
+An account of the student's own process should reflect work actually done
+and concepts actually understood.
+
+Course foundations checked during development:
+- slides/CSDS611_Lecture_07.pdf, slide 5: Gaussian affine transformations.
+- slides/CSDS611_Lecture_17.pdf, slides 6--7: GP definition using arbitrary
+finite collections of function values.
+- slides/CSDS611_Lecture_18.pdf, slide 10: squared exponential covariance,
+strength sigma, and scale ell.
+- assignment-3/assignment_3.pdf: prove Gaussianity and find derivative mean
+and covariance.
+No derivative notion, bibliography, data fitting, or
+numerical experiment is specified.
+
+Additional probability facts used: completeness of L^2, Cauchy--Schwarz
+and moment convergence, and the Gaussian limiting-law property.
+Do not
+attribute their proofs to the inspected slides.
+Fuller justifications are
+provided in Notes 08--10.
+The four covariance terms, mixed-difference
+identity, and explicit kernel derivative are analytical calculations, not
+observations from data or outcomes of model fitting.
+
+Resources consulted in document development included course slides,
+consolidated GP study notes, AI-assisted discussion, GPML sections 4.1.1
+and 9.4, and the Paciorek--Schervish article linked in Note 02.
+Consolidated
+notes supplied GP definitions, moments, Gaussian transformations, kernel
+validity, and the squared exponential kernel; the convergence proof needed
+further work.
+Removing printed references did not make every fact originate
+in the slides or change which resources were consulted.
+Distinguish this
+development record from claims about what the student personally read,
+derived independently, or checked.
+
+Symbolic checks performed in development supported the mixed derivative,
+symmetry, diagonal variance, and finite-difference limit.
+They supplement
+the analytical proof; they do not establish the probabilistic theorem.
+Compilation and page inspection check presentation, not mathematical
+validity or student understanding.
+Historical exported PDFs and the live
+editor preview may show different revisions; state what was actually
+checked when describing verification.
+
+\end{comment}
+\begin{comment}
+PREPARATION 15: READINESS AND EXPLANATION PRACTICE
+
+The full preparation belongs in these comments rather than the short
+rendered solution.
+Practice reconstructing the following without copying:
+- GP definition and the reason arbitrary finite collections matter.
+- Mean-square derivative definition and the distinction from sample paths.
+- The finite-difference vector's Gaussian linear transformation.
+- The covariance expansion with all four terms and their signs.
+- The double-integral substitutions and continuity justification.
+- The Cauchy cancellation and completeness that establish a limit.
+- Cauchy--Schwarz bounds for moment convergence.
+- Finite-vector convergence and the Gaussian characteristic function.
+- Product-rule signs, diagonal variance, units, and the PSD quadratic form.
+
+A scratch sheet of these derivations is more useful than memorizing an
+account of discovery.
+The key distinction to explain is why comparing two
+step sizes establishes existence, whereas merely writing candidate mean
+and covariance formulas does not.
+Readiness is demonstrated by explaining
+the connections and reconstructing the essential steps.
+The presence of
+these notes is not evidence that understanding has been tested.
+\end{comment}
 \end{document}
