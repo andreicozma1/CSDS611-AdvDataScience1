@@ -54,12 +54,18 @@ assignment prompt.
 ## Lecture Evidence
 
 Before explaining or solving this assignment, read the applicable entries in
-[Lecture Slide Guide](#lecture-slide-guide). It inventories all 13
-available decks, identifies the relevant slides by number and title, and
+[Lecture Slide Guide](#lecture-slide-guide). It covers the 13-deck selection
+from Lectures 02–14, identifies relevant slides by number and title, and
 explains what each contributes. The shortest useful path is Lecture 5 slide 4
 for coin flips; Lecture 3 slide 5 for the count of heads; Lecture 5 slides
 9-10 for possible priors; and Lecture 9 slides 4-6 and 8-11 for the hypothesis
 test. Consult Lecture 11 slides 3-5 if the decision uses explicit losses.
+
+For cross-course questions, use the [course lecture guide](../slides/lecture-guide.md)
+and [slide-reading instructions](../slides/AGENTS.md), including their known
+source corrections. The local selection below serves the coin test; it is not
+the current course-wide inventory. In particular, check the course guide's
+Lecture 9 slide 6 ML-threshold correction before using a likelihood-based rule.
 
 The slides explain methods; they do not add a prior or decision rule to the
 assignment prompt. Recheck the PDFs if a deck changes before citing its slides.
@@ -75,8 +81,8 @@ that flips are independent or give a prior over \(\theta\), prior
 probabilities for H0 and HA, or a decision rule. Treat those as modeling and
 decision choices, not hidden requirements.
 
-The [Lecture Slide Guide](#lecture-slide-guide) inventories the 13
-available lecture decks (147 slides) and explains the 34 slides relevant
+The [Lecture Slide Guide](#lecture-slide-guide) covers the 13 selected
+lecture decks from Lectures 02–14 (147 slides) and explains 34 slides relevant
 to this assignment. Lecture 9 supplies the direct hypothesis-testing
 framework. Lectures 3-5 supply probability, Bayes' rule, Bernoulli/binomial
 models, and possible priors; Lecture 11 supplies loss-based decisions.
@@ -286,8 +292,8 @@ One subtlety: the prompt calls \(H_A\) “unfair” but writes \(\theta\in[0,1]\
 
 ## Lecture Slide Guide
 
-This guide supports the coin fairness test in `assignment_2.pdf`. It inventories
-all 13 lecture PDFs (147 slides) in `../slides/` and explains 34 relevant
+This guide supports the coin fairness test in `assignment_2.pdf`. It covers
+13 selected lecture PDFs, Lectures 02–14 (147 slides), and explains 34 relevant
 slides in detail. The PDF page and the printed slide number coincide in these
 decks. Titles and contents below were checked against the PDFs on 2026-10-01;
 recheck a deck if its PDF changes. The assignment prompt, rather than a
@@ -305,7 +311,7 @@ lecture example, defines the required hypotheses.
    for choosing the wrong hypothesis. Lecture 10 slides 9-11 give a more
    abstract route to the same marginal-likelihood idea.
 
-### Every Deck at a Glance
+### Assignment-Specific Deck Selection
 
 | Deck | Slides | Relevance to Assignment 2 |
 | --- | ---: | --- |

@@ -1,5 +1,70 @@
 # CSDS 611 Repository Instructions
 
+## Finding course evidence
+
+For coursework, statistical questions, derivations, or lecture summaries, start
+with the relevant entries below and the
+[problem-oriented lookup paths](slides/lecture-guide.md#lookup-by-problem).
+Read [slide-reading instructions](slides/AGENTS.md) before extracting or citing
+lecture evidence, including when working from an assignment directory.
+The [lecture guide](slides/lecture-guide.md) owns detailed slide outlines,
+equation locations, notation changes, and source corrections. Load only the
+sections needed for the task; verify the cited PDF pages before using a result.
+Assignment prompts define the question and required assumptions; lecture examples
+supply methods. Label additional assumptions and independently derived steps.
+
+### Lecture contents
+
+The checked collection is Lectures 02–19: 18 PDF/Markdown pairs, 209 slides,
+inventoried on 2026-10-31. Each link opens an outline with links to both formats.
+Recheck this inventory when source decks are added or replaced.
+
+- [L02: BO preliminaries](slides/lecture-guide.md#lecture-02): optimization,
+  surrogates, the BO loop, exploration/exploitation, acquisition, roadmap.
+- [L03: Uncertain quantities](slides/lecture-guide.md#lecture-03): random
+  variables/processes, notation, PMFs/PDFs, simulation, joint/marginal/conditional rules.
+- [L04: Intro Bayes](slides/lecture-guide.md#lecture-04): priors, likelihoods,
+  Bayes' theorem, normalization, multiple observations, Bayesian work-cycle.
+- [L05: Non-Gaussian variables](slides/lecture-guide.md#lecture-05): Bernoulli,
+  binomial, Poisson, geometric, uniform, beta, von Mises, exponential, gamma,
+  Weibull, beta-prime, chi, chi-square, Student-t; supports and simulation.
+- [L06: Gaussian scalars](slides/lecture-guide.md#lecture-06): normal density,
+  whitening, sums/norms, CDF/quantiles, credible intervals, precision and conjugacy.
+- [L07: Gaussian vectors](slides/lecture-guide.md#lecture-07): covariance,
+  affine transforms, sampling, Cholesky/eigen/SVD factors, linear Gaussian inference.
+- [L08: Gaussian conditioning](slides/lecture-guide.md#lecture-08): independence,
+  marginals, permutations, block conditionals, sequential updates, credible ellipses.
+- [L09: Hypothesis tests](slides/lecture-guide.md#lecture-09): categorical models,
+  spam example, Bayes factors, posterior odds, MAP/ML, uncertain-parameter evidence.
+- [L10: Exponential families](slides/lecture-guide.md#lecture-10): sufficient
+  statistics, conjugate updates, normalizing constants, marginal likelihood, detection.
+- [L11: Decision theory](slides/lecture-guide.md#lecture-11): states/data/actions,
+  loss, posterior risk, Bayes rules, mean/median/mode estimators, BO decisions.
+- [L12: Applied decisions](slides/lecture-guide.md#lecture-12): missing test
+  identity, clinical losses, Dirichlet preferences, reactions, recommendation.
+- [L13: Linear regression](slides/lecture-guide.md#lecture-13): basis/design,
+  normal equations, pseudoinverse, ridge, Gaussian coefficient posterior and MAP.
+- [L14: Model selection](slides/lecture-guide.md#lecture-14): candidate bases,
+  model indicators, integrated evidence, Gaussian regression comparison.
+- [L15: Prediction](slides/lecture-guide.md#lecture-15): posterior predictive
+  integration, joint queries, parameter/noise uncertainty, Bayesian model averaging.
+- [L16: Kernel regression](slides/lecture-guide.md#lecture-16): function-space
+  means/covariances, training/query blocks, conditioning, PSD kernels and composition.
+- [L17: Gaussian processes](slides/lecture-guide.md#lecture-17): finite-dimensional
+  definition, heteroscedastic noise, consistency, function priors and samples.
+- [L18: GP regression](slides/lecture-guide.md#lecture-18): posterior derivation,
+  predictive mean/variance, observation noise, squared-exponential correlations.
+- [L19: GP implementation](slides/lecture-guide.md#lecture-19): triangular solves,
+  Cholesky reuse, costs, squared-exponential/white/constant/periodic/diffusion kernels.
+
+### Assignment-specific context
+
+- Read [Assignment 2 instructions](assignment-2/AGENTS.md) when working on the
+  coin test; its [lecture guide](assignment-2/lecture-slide-guide.md) is a
+  task-specific selection, not the course-wide inventory.
+- Use each assignment's original PDF and any local instructions. The report
+  conventions below apply to student-authored solutions across assignments.
+
 ## Assignment submission filenames
 
 For a student-authored solution to assignment number `N`, use the basename
