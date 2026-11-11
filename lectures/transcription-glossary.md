@@ -1,8 +1,8 @@
 # CSDS 611 transcription glossary
 
-This is the proposed Scribe v3 keyterm list for the Fall 2026 lecture recordings. It draws from all 18 [Markdown slide decks](README.md#slides-by-lecture), lectures 02–19, including their equations and examples. The headings identify source decks. Each bullet under **Keyterms** is one literal entry to send, in the order shown.
+This is the Scribe v3 keyterm list for the Fall 2026 lecture recordings. It draws from all 18 [Markdown slide decks](README.md#slides-by-lecture), lectures 02–19, including their equations and examples. Each bullet under **Keyterms** is one literal entry to send, in the order shown.
 
-Use the same list for each recording because the [recording-to-deck mapping](README.md#recordings-by-date) is still unverified. The glossary covers slide vocabulary and plausible spoken forms of its notation. It cannot establish which terms were spoken or how to spell names that occur only in discussion.
+Use the current course-wide list for each recording because the [recording-to-deck mapping](README.md#recordings-by-date) is still unverified. The glossary covers slide vocabulary, plausible spoken forms of notation, and terms added after reviewing transcripts. The dated additions below preserve the order of earlier versions. Each transcript identifies the version it used by term count and hash.
 
 ## Keyterms
 
@@ -310,6 +310,43 @@ These entries are plausible readings of notation in the slides. The speaker's pr
 - big O of N cubed
 - argmin
 - argmax
+
+### Additions from the August 20 transcript
+
+- queries
+
+### Additions from the August 25 transcript
+
+- capital J
+- indicator function
+
+### Additions from the September 1 transcript
+
+- von Mises distribution
+- modified Bessel function
+- rand
+- conjugate
+
+### Additions from the September 10 transcript
+
+- normal distribution
+
+### Additions from the September 29 transcript
+
+- Tikhonov regularization
+
+### Additions from the October 8 transcript
+
+- high-dimensional
+
+### Additions from the October 13 transcript
+
+- Mercer's theorem
+- Woodbury's identity
+
+### Additions from the October 27 transcript
+
+- ell
 
 ## Terms to check against the audio
 

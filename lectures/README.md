@@ -1,7 +1,7 @@
 # CSDS 611 lecture materials
 
-This directory contains the Fall 2026 lecture slides, their Markdown
-transcriptions, and audio recovered from the Goodnotes course notebook.
+This directory contains the Fall 2026 lecture slides and their Markdown
+transcriptions, plus the Goodnotes recordings and their Scribe v3 transcripts.
 
 [Slides by lecture](#slides-by-lecture) · [Recordings by date](#recordings-by-date)
 
@@ -36,26 +36,31 @@ Lecture 17’s title is shown with its spelling corrected.
 
 ## Recordings by date
 
-Select a date to open one of the 17 recovered recordings. Dates use Eastern
-time. The mapping to numbered slide decks is unverified, and some recordings
-may cover part of a class.
+Select a date to open the audio. Each recording has a readable Markdown
+transcript and the original Scribe v3 JSON with word timestamps. The
+[review log](transcript-review.md) records uncertain wording, speaker labels,
+and technical corrections. The [glossary](transcription-glossary.md) lists the
+keyterms used during transcription.
 
-| Recording date | Playback duration |
-| --- | ---: |
-| [2026-08-20](2026-08-20_FB8DE074.m4a) | 66:23 |
-| [2026-08-25](2026-08-25_3D786893.m4a) | 64:46 |
-| [2026-08-27](2026-08-27_0A2DB600.m4a) | 58:16 |
-| [2026-09-01](2026-09-01_D708E20C.m4a) | 67:01 |
-| [2026-09-03](2026-09-03_C995A7EF.m4a) | 59:27 |
-| [2026-09-08](2026-09-08_FE79D51A.m4a) | 66:58 |
-| [2026-09-10](2026-09-10_349E6F2E.m4a) | 65:44 |
-| [2026-09-17](2026-09-17_0EF7DF90.m4a) | 61:11 |
-| [2026-09-22](2026-09-22_0C09C6AA.m4a) | 48:10 |
-| [2026-09-24](2026-09-24_2C2C7B9F.m4a) | 76:26 |
-| [2026-09-29](2026-09-29_17950960.m4a) | 60:43 |
-| [2026-10-01](2026-10-01_9A3E8C58.m4a) | 51:14 |
-| [2026-10-08](2026-10-08_52291E85.m4a) | 60:12 |
-| [2026-10-13](2026-10-13_09627C3C.m4a) | 58:25 |
-| [2026-10-27](2026-10-27_0AF31E51.m4a) | 53:54 |
-| [2026-10-29](2026-10-29_B21AFBFC.m4a) | 64:10 |
-| [2026-11-05](2026-11-05_13D4A044.m4a) | 69:27 |
+Dates use Eastern time. The mapping to numbered slide decks is unverified,
+and some recordings may cover part of a class.
+
+| Recording date | Playback duration | Transcript |
+| --- | ---: | --- |
+| [2026-08-20](2026-08-20_FB8DE074.m4a) | 66:23 | [Markdown](2026-08-20_FB8DE074.scribe-v3.md) · [Timed JSON](2026-08-20_FB8DE074.scribe-v3.json) |
+| [2026-08-25](2026-08-25_3D786893.m4a) | 64:46 | [Markdown](2026-08-25_3D786893.scribe-v3.md) · [Timed JSON](2026-08-25_3D786893.scribe-v3.json) |
+| [2026-08-27](2026-08-27_0A2DB600.m4a) | 58:16 | [Markdown](2026-08-27_0A2DB600.scribe-v3.md) · [Timed JSON](2026-08-27_0A2DB600.scribe-v3.json) |
+| [2026-09-01](2026-09-01_D708E20C.m4a) | 67:01 | [Markdown](2026-09-01_D708E20C.scribe-v3.md) · [Timed JSON](2026-09-01_D708E20C.scribe-v3.json) |
+| [2026-09-03](2026-09-03_C995A7EF.m4a) | 59:27 | [Markdown](2026-09-03_C995A7EF.scribe-v3.md) · [Timed JSON](2026-09-03_C995A7EF.scribe-v3.json) |
+| [2026-09-08](2026-09-08_FE79D51A.m4a) | 66:58 | [Markdown](2026-09-08_FE79D51A.scribe-v3.md) · [Timed JSON](2026-09-08_FE79D51A.scribe-v3.json) |
+| [2026-09-10](2026-09-10_349E6F2E.m4a) | 65:44 | [Markdown](2026-09-10_349E6F2E.scribe-v3.md) · [Timed JSON](2026-09-10_349E6F2E.scribe-v3.json) |
+| [2026-09-17](2026-09-17_0EF7DF90.m4a) | 61:11 | [Markdown](2026-09-17_0EF7DF90.scribe-v3.md) · [Timed JSON](2026-09-17_0EF7DF90.scribe-v3.json) |
+| [2026-09-22](2026-09-22_0C09C6AA.m4a) | 48:10 | [Markdown](2026-09-22_0C09C6AA.scribe-v3.md) · [Timed JSON](2026-09-22_0C09C6AA.scribe-v3.json) |
+| [2026-09-24](2026-09-24_2C2C7B9F.m4a) | 76:26 | [Markdown](2026-09-24_2C2C7B9F.scribe-v3.md) · [Timed JSON](2026-09-24_2C2C7B9F.scribe-v3.json) |
+| [2026-09-29](2026-09-29_17950960.m4a) | 60:43 | [Markdown](2026-09-29_17950960.scribe-v3.md) · [Timed JSON](2026-09-29_17950960.scribe-v3.json) |
+| [2026-10-01](2026-10-01_9A3E8C58.m4a) | 51:14 | [Markdown](2026-10-01_9A3E8C58.scribe-v3.md) · [Timed JSON](2026-10-01_9A3E8C58.scribe-v3.json) |
+| [2026-10-08](2026-10-08_52291E85.m4a) | 60:12 | [Markdown](2026-10-08_52291E85.scribe-v3.md) · [Timed JSON](2026-10-08_52291E85.scribe-v3.json) |
+| [2026-10-13](2026-10-13_09627C3C.m4a) | 58:25 | [Markdown](2026-10-13_09627C3C.scribe-v3.md) · [Timed JSON](2026-10-13_09627C3C.scribe-v3.json) |
+| [2026-10-27](2026-10-27_0AF31E51.m4a) | 53:54 | [Markdown](2026-10-27_0AF31E51.scribe-v3.md) · [Timed JSON](2026-10-27_0AF31E51.scribe-v3.json) |
+| [2026-10-29](2026-10-29_B21AFBFC.m4a) | 64:10 | [Markdown](2026-10-29_B21AFBFC.scribe-v3.md) · [Timed JSON](2026-10-29_B21AFBFC.scribe-v3.json) |
+| [2026-11-05](2026-11-05_13D4A044.m4a) | 69:27 | [Markdown](2026-11-05_13D4A044.scribe-v3.md) · [Timed JSON](2026-11-05_13D4A044.scribe-v3.json) |
