@@ -1,6 +1,6 @@
 # CSDS 611 transcript review
 
-Reviews follow the order of the [dated recordings](README.md#recordings-by-date). Each review records transcript evidence, confidence in the issue and any proposed wording, and changes to the [glossary](transcription-glossary.md). Times are offsets from the start of each recording.
+Reviews follow the order of the [dated recordings](README.md#recordings-by-date). Each review records transcript evidence, confidence in the issue and any proposed wording, and changes to the [glossary](transcription-glossary.md). Times are offsets from the start of each recording. Applied corrections use the start of the affected word or phrase in the original JSON. They record the wording before and after each Markdown edit.
 
 ## August 20, 2026
 
@@ -12,7 +12,7 @@ The independent review covered the full 66:23 transcript, the timed JSON, all ni
 
 - **53:18–53:23, “new worries very far away from the existing worries.”** The discussion concerns selecting points to evaluate, and slides 5–7 repeatedly refer to queries. High confidence that both instances of “worries” mean “queries.” Added `queries` for subsequent recordings.
 
-The August 20 transcript used 285 terms. The glossary now has 286. The pilot transcript retains Scribe’s wording and the glossary hash used for that request.
+The August 20 transcript used 285 terms. The glossary now has 286. The transcript header retains the glossary hash used for that request.
 
 ### Wording to confirm
 
@@ -39,6 +39,11 @@ Several labels align with question-and-answer exchanges in the text. Two labels 
 ### Decision before August 25
 
 The user chose to keep the uncertain passages flagged and continue with 286 keyterms. The August 20 transcript and its speaker settings were retained as returned.
+
+### Applied corrections
+
+- **53:19.936** — “worries” → “queries” (Lecture 02, slides 5–7, and the discussion of new evaluation points).
+- **53:22.796** — “worries” → “queries” (the same sentence contrasts new and existing evaluation points).
 
 ## August 25, 2026
 
@@ -80,6 +85,10 @@ Five of the six labels appear once. “Time” at **08:25** and “Numbers” at
 ### Decision before August 27
 
 The user chose to keep the uncertain passages flagged and continue with 288 keyterms and the existing speaker settings.
+
+### Applied corrections
+
+- **48:39.388** — “capital Z” → “capital J” (Lecture 03, slides 5 and 8, and the preceding statement that the upper bound is capital J).
 
 ## August 27, 2026
 
@@ -135,7 +144,13 @@ The September 1 transcript used 288 terms. The glossary now has 292.
 - **1:02:30, Student t peak “controlled exclusively by nu.”** Slide 18 centers the density at $\mu$. The degrees of freedom are $\nu$. Both terms already appear in the glossary. High confidence in the intended parameter, uncertain whether the cause was recognition or speech. [SciPy Student t parameter reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html)
 - **1:05:43 onward, naming the Student t distribution.** The later response correctly identifies William C. Gosset. The conversation speculates about why the letter t was chosen. It offers no basis for a spelling change or a glossary addition.
 
-The mathematical notes resolve the intended formulas for readers. The original wording stays in the transcript, with the uncertain spoken details recorded here.
+The mathematical notes resolve the intended formulas for readers. The transcript retains the wording of those flagged passages.
+
+### Applied corrections
+
+- **37:29.200** — “theAgora distribution” → “the von Mises distribution” (Lecture 05, slide 11, and the discussion of angles separated by $2\pi$).
+- **42:31.696** — “Rounds” → `rand` (the MATLAB command on Lecture 05, slide 12).
+- **47:17.056** — “consummate” → “conjugate” (Lecture 05, slide 13, and the discussion of gamma conjugate priors).
 
 ## September 3, 2026
 
@@ -234,6 +249,10 @@ The independent reviewer read the full transcript and checked the JSON and origi
 - **29:02–29:04, “Maximalization.”** Slide 6 sums over the unknown diagnostic choice $d$, and the student has just suggested marginalizing it. High confidence the operation is marginalization, which is already in the glossary. Exact speech remains unconfirmed.
 - **38:27–38:40, “four types of reactions” followed by five spoken examples.** Slide 8 encodes four categories including no response. High confidence in the model's category count, uncertain whether the extra category was spoken or introduced by recognition.
 - **About 1:13, claims about Netflix's use of hidden Markov models and a Dirichlet approximation.** The slides present a simplified classroom example. Netflix authors describe multiple recommendation algorithms, which supports the broad framing. Those publications do not establish the specific implementation claimed here. Medium confidence the remarks need qualification if quoted as facts about Netflix. [Netflix authors' system paper](https://doi.org/10.1145/2843948)
+
+### Applied corrections
+
+- **29:02.956** — “Maximalization” → “Marginalization” (the same exchange asks “Marginalize on D?” and Lecture 12, slide 6, sums over the diagnostic choice).
 
 ## September 29, 2026
 
@@ -341,6 +360,10 @@ The reviewer read the full transcript, checked word-level offsets, and compared 
 - **56:59–57:09, “sine takes values between 0 and 1” and “we have minus 1.”** Slide 12 uses sine squared, which ranges from 0 to 1. Its correlation is $\exp[-(2/\ell^2)\sin^2(\pi\Delta x/p)]$, so the minimum is $\exp(-2/\ell^2)>0$. High confidence in the mathematical discrepancy. The PDF also labels the formula “The constant kernel” under the exponential-sine-squared heading, an apparent carryover from the earlier slide.
 - **58:33, “every junks of period P.”** “Chunks” fits the discussion of repeating windows of length $p$. High confidence this is a minor recognition error, with no specialized glossary term needed.
 
+### Applied corrections
+
+- **58:33.520** — “junks” → “chunks” (the discussion of repeating segments of length $p$).
+
 ## November 5, 2026
 
 [Recording](2026-11-05_13D4A044.m4a) · [Transcript](2026-11-05_13D4A044.scribe-v3.md) · [Timed JSON](2026-11-05_13D4A044.scribe-v3.json) · [Related Lecture 02 slides](CSDS611_Lecture_02.pdf)
@@ -365,4 +388,4 @@ The independent reviewer read the full transcript, checked its timed JSON and th
 
 ## Batch verification
 
-All 17 recordings have a Markdown transcript, an unmodified provider JSON response, and an independent review above. The audio totals 17 hours, 32 minutes, and 27.6 seconds. All 165,347 returned words have timestamps within the corresponding recording, and the Markdown preserves the provider wording in order. Each request's keyterm count and checksum can be reproduced from the ordered glossary. The list grew from 285 to 298 terms, and the speech-to-text settings stayed consistent throughout the batch. Text, timing, and source comparisons leave exact wording and speaker attribution unresolved where the review notes call for listening.
+All 17 recordings have a Markdown transcript, an unmodified provider JSON response, and an independent review above. The audio totals 17 hours, 32 minutes, and 27.6 seconds. All 165,347 returned words have timestamps within the corresponding recording, and the original JSON preserves the provider wording in order. The Markdown incorporates eight timestamped recognition corrections across five recordings. Each request's keyterm count and checksum can be reproduced from the ordered glossary. The list grew from 285 to 298 terms, and the speech-to-text settings stayed consistent throughout the batch. Text, timing, and source comparisons leave exact wording and speaker attribution unresolved where the review notes call for listening.
