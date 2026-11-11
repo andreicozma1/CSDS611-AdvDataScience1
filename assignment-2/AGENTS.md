@@ -187,7 +187,7 @@ Start by turning each question raised by the prompt into a question for the slid
 | How do I compare \(H_0\) with \(H_A\)? | [Lecture 9, slides 4–6 and 8–11](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_09.pdf) | Marginal likelihood, Bayes factor, prior odds, and decision rule. |
 | What if wrong decisions have different costs? | [Lecture 11, slides 3–5](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_11.pdf) | Choose the action with the lowest posterior expected loss. |
 
-The [slide guide](/Users/acozma/GitHub/CSDS611-AdvDataScience1/assignment-2/lecture-slide-guide.md) explains those pages in more detail. One source check matters: Lecture 5, slide 5 has a typo in the binomial formula; use Lecture 3, slide 5 for its correct exponent \(6-k\).
+The [slide guide](#lecture-slide-guide) explains those pages in more detail. One source check matters: Lecture 5, slide 5 has a typo in the binomial formula; use Lecture 3, slide 5 for its correct exponent \(6-k\).
 
 ## Work through the problem
 
