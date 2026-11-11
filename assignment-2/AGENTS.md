@@ -61,11 +61,12 @@ for coin flips; Lecture 3 slide 5 for the count of heads; Lecture 5 slides
 9-10 for possible priors; and Lecture 9 slides 4-6 and 8-11 for the hypothesis
 test. Consult Lecture 11 slides 3-5 if the decision uses explicit losses.
 
-For cross-course questions, use the [course lecture guide](../slides/lecture-guide.md)
-and [slide-reading instructions](../slides/AGENTS.md), including their known
-source corrections. The local selection below serves the coin test; it is not
-the current course-wide inventory. In particular, check the course guide's
-Lecture 9 slide 6 ML-threshold correction before using a likelihood-based rule.
+Use the [Notion lecture library](https://app.notion.com/p/341ee83111d3494594a421e2221c95fb)
+for the full course and the [slide-reading instructions](../lectures/AGENTS.md)
+to check the original PDFs. Before using a likelihood-based rule, check the
+ML-threshold correction for [Lecture 09, slide 6](https://app.notion.com/p/40af723fb8cc8137a9dfd5ceb9147032).
+With posterior odds defined as alternative over null, compare those odds with
+the prior odds in the same orientation.
 
 The slides explain methods; they do not add a prior or decision rule to the
 assignment prompt. Recheck the PDFs if a deck changes before citing its slides.
@@ -180,11 +181,11 @@ Start by turning each question raised by the prompt into a question for the slid
 
 | Question | Where to look | What to take from it |
 | --- | --- | --- |
-| How do I model one heads-or-tails outcome? | [Lecture 5, slide 4](/Users/acozma/GitHub/CSDS611-AdvDataScience1/slides/CSDS611_Lecture_05.pdf) | The Bernoulli likelihood. |
-| What if I use “four heads in six flips” instead of the exact order? | [Lecture 3, slide 5](/Users/acozma/GitHub/CSDS611-AdvDataScience1/slides/CSDS611_Lecture_03.pdf) | The binomial likelihood and its combinatorial factor. |
+| How do I model one heads-or-tails outcome? | [Lecture 5, slide 4](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_05.pdf) | The Bernoulli likelihood. |
+| What if I use “four heads in six flips” instead of the exact order? | [Lecture 3, slide 5](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_03.pdf) | The binomial likelihood and its combinatorial factor. |
 | What could describe an uncertain \(\theta\)? | Lecture 5, slides 9–10 | Uniform and Beta distributions are *possible priors*, not assigned priors. |
-| How do I compare \(H_0\) with \(H_A\)? | [Lecture 9, slides 4–6 and 8–11](/Users/acozma/GitHub/CSDS611-AdvDataScience1/slides/CSDS611_Lecture_09.pdf) | Marginal likelihood, Bayes factor, prior odds, and decision rule. |
-| What if wrong decisions have different costs? | [Lecture 11, slides 3–5](/Users/acozma/GitHub/CSDS611-AdvDataScience1/slides/CSDS611_Lecture_11.pdf) | Choose the action with the lowest posterior expected loss. |
+| How do I compare \(H_0\) with \(H_A\)? | [Lecture 9, slides 4–6 and 8–11](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_09.pdf) | Marginal likelihood, Bayes factor, prior odds, and decision rule. |
+| What if wrong decisions have different costs? | [Lecture 11, slides 3–5](/Users/acozma/GitHub/CSDS611-AdvDataScience1/lectures/CSDS611_Lecture_11.pdf) | Choose the action with the lowest posterior expected loss. |
 
 The [slide guide](/Users/acozma/GitHub/CSDS611-AdvDataScience1/assignment-2/lecture-slide-guide.md) explains those pages in more detail. One source check matters: Lecture 5, slide 5 has a typo in the binomial formula; use Lecture 3, slide 5 for its correct exponent \(6-k\).
 
@@ -315,19 +316,19 @@ lecture example, defines the required hypotheses.
 
 | Deck | Slides | Relevance to Assignment 2 |
 | --- | ---: | --- |
-| [Lecture 2: BO preliminaries](../slides/CSDS611_Lecture_02.pdf) | 9 | Bayesian optimization, acquisition, and exploration. No direct role in this coin test. |
-| [Lecture 3: Uncertain quantities of interest](../slides/CSDS611_Lecture_03.pdf) | 10 | Slides 3, 5, 9-10: parameter notation, correct binomial count formula, and probability rules. |
-| [Lecture 4: Intro Bayes](../slides/CSDS611_Lecture_04.pdf) | 9 | Slides 2, 4-6, 8-9: prior, likelihood, joint, posterior, and repeated observations. |
-| [Lecture 5: Random variables](../slides/CSDS611_Lecture_05.pdf) | 18 | Slides 4, 9-10: Bernoulli likelihood and candidate Uniform/Beta priors. Slide 5 discusses Binomial but has a formula typo. |
-| [Lecture 6: Gaussian random scalars](../slides/CSDS611_Lecture_06.pdf) | 8 | Normal models and intervals; the coin outcome is Bernoulli, so this deck is not needed. |
-| [Lecture 7: Gaussian random vectors](../slides/CSDS611_Lecture_07.pdf) | 9 | Multivariate normal models; no direct role. |
-| [Lecture 8: Gaussian random vectors](../slides/CSDS611_Lecture_08.pdf) | 11 | Normal independence, marginals, and conditionals; the general ideas appear in more directly relevant decks. |
-| [Lecture 9: Bayesian hypothesis tests](../slides/CSDS611_Lecture_09.pdf) | 11 | Core deck. Slides 4-6 give binary posterior odds and a decision rule; 8-11 handle uncertain parameters. Slides 2-3 and 7 add context. |
-| [Lecture 10: The exponential family](../slides/CSDS611_Lecture_10.pdf) | 15 | Slides 9-11 give a general marginal-likelihood derivation; the worked likelihood family elsewhere in the deck is not the coin model. |
-| [Lecture 11: Bayesian decision theory](../slides/CSDS611_Lecture_11.pdf) | 10 | Slides 3-5 explain actions, loss, and posterior expected loss if a decision cost is specified. |
-| [Lecture 12: Applied decision problems](../slides/CSDS611_Lecture_12.pdf) | 15 | Slide 2 recaps the decision rule; clinical and recommendation examples are not needed. |
-| [Lecture 13: Linear regression](../slides/CSDS611_Lecture_13.pdf) | 10 | Regression and normal-data models; no direct role. |
-| [Lecture 14: Model selection](../slides/CSDS611_Lecture_14.pdf) | 12 | Slides 5-6 and 8 offer an optional analogy: compare models after integrating uncertain parameters. Its actual models are Gaussian regressions. |
+| [Lecture 2: BO preliminaries](../lectures/CSDS611_Lecture_02.pdf) | 9 | Bayesian optimization, acquisition, and exploration. No direct role in this coin test. |
+| [Lecture 3: Uncertain quantities of interest](../lectures/CSDS611_Lecture_03.pdf) | 10 | Slides 3, 5, 9-10: parameter notation, correct binomial count formula, and probability rules. |
+| [Lecture 4: Intro Bayes](../lectures/CSDS611_Lecture_04.pdf) | 9 | Slides 2, 4-6, 8-9: prior, likelihood, joint, posterior, and repeated observations. |
+| [Lecture 5: Random variables](../lectures/CSDS611_Lecture_05.pdf) | 18 | Slides 4, 9-10: Bernoulli likelihood and candidate Uniform/Beta priors. Slide 5 discusses Binomial but has a formula typo. |
+| [Lecture 6: Gaussian random scalars](../lectures/CSDS611_Lecture_06.pdf) | 8 | Normal models and intervals; the coin outcome is Bernoulli, so this deck is not needed. |
+| [Lecture 7: Gaussian random vectors](../lectures/CSDS611_Lecture_07.pdf) | 9 | Multivariate normal models; no direct role. |
+| [Lecture 8: Gaussian random vectors](../lectures/CSDS611_Lecture_08.pdf) | 11 | Normal independence, marginals, and conditionals; the general ideas appear in more directly relevant decks. |
+| [Lecture 9: Bayesian hypothesis tests](../lectures/CSDS611_Lecture_09.pdf) | 11 | Core deck. Slides 4-6 give binary posterior odds and a decision rule; 8-11 handle uncertain parameters. Slides 2-3 and 7 add context. |
+| [Lecture 10: The exponential family](../lectures/CSDS611_Lecture_10.pdf) | 15 | Slides 9-11 give a general marginal-likelihood derivation; the worked likelihood family elsewhere in the deck is not the coin model. |
+| [Lecture 11: Bayesian decision theory](../lectures/CSDS611_Lecture_11.pdf) | 10 | Slides 3-5 explain actions, loss, and posterior expected loss if a decision cost is specified. |
+| [Lecture 12: Applied decision problems](../lectures/CSDS611_Lecture_12.pdf) | 15 | Slide 2 recaps the decision rule; clinical and recommendation examples are not needed. |
+| [Lecture 13: Linear regression](../lectures/CSDS611_Lecture_13.pdf) | 10 | Regression and normal-data models; no direct role. |
+| [Lecture 14: Model selection](../lectures/CSDS611_Lecture_14.pdf) | 12 | Slides 5-6 and 8 offer an optional analogy: compare models after integrating uncertain parameters. Its actual models are Gaussian regressions. |
 
 ### Slides That Supply the Coin Model and Probability Rules
 
