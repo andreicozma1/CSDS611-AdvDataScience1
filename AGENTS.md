@@ -1,69 +1,93 @@
 # CSDS 611 Repository Instructions
 
+## Make choices together
+
+After a quick check of the requirements and existing files, use the permitted
+structured input tool early when the user's preference would change what you
+deliver or how they use it. This includes reversible choices such as where
+recordings live, how files are named, or how much detail goes into a report.
+Ask before making the dependent change. Continue work that is independent of
+the answer.
+
+- Start with the choice that rules out the most irrelevant options. Offer two
+  or three viable choices or a yes/no question. Use actual paths, names, or
+  outcomes in the labels and explain the tradeoffs in the descriptions.
+- Recommend one option when the evidence supports it. Let the user redirect,
+  defer, or combine compatible choices. Ask a follow-up only if the first
+  answer leaves a decision that would still change the result.
+- Proceed directly when the user has already chosen, the assignment fixes the
+  answer, or the remaining detail is routine. Follow the broader tool and
+  authorization rules if a choice requires permission or the tool is unavailable.
+
+## Final project report (Overleaf)
+
+The [Overleaf submodule](final-project-report/) holds the LaTeX source for
+the CSDS 611 final project report. For report edits, start with
+[`main.tex`](final-project-report/main.tex) inside the submodule.
+
+The course repository pins a specific report commit. The submodule is
+configured to track Overleaf's `main` branch for remote updates.
+
 ## Finding course evidence
 
-For coursework, statistical questions, derivations, or lecture summaries, start
-with the relevant entries below and the
-[problem-oriented lookup paths](slides/lecture-guide.md#lookup-by-problem).
-Read [slide-reading instructions](slides/AGENTS.md) before extracting or citing
-lecture evidence, including when working from an assignment directory.
-The [lecture guide](slides/lecture-guide.md) owns detailed slide outlines,
-equation locations, notation changes, and source corrections. Load only the
-sections needed for the task; verify the cited PDF pages before using a result.
-Assignment prompts define the question and required assumptions; lecture examples
-supply methods. Label additional assumptions and independently derived steps.
+For coursework, derivations, and lecture summaries, use the
+[Notion lecture library](https://app.notion.com/p/341ee83111d3494594a421e2221c95fb) to find
+topics, slide references, equations, figures, and source corrections. Browse in
+[lecture order](https://app.notion.com/p/341ee83111d3494594a421e2221c95fb?v=40af723fb8cc811186ef000cbda7c787)
+or use the library's **Find a topic** view.
+
+Read the [slide-reading instructions](lectures/AGENTS.md) before citing lecture
+evidence. They explain how to search local Markdown, verify equations and
+figures in the original PDFs, and combine evidence across decks. If Notion is
+unavailable, use the same local workflow.
+
+Use the original assignment PDF to establish the question and requirements.
+Use lectures to find applicable methods, and label added assumptions and
+independent derivations. For the coin test, start with the
+[Assignment 2 instructions](assignment-2/AGENTS.md#lecture-evidence).
 
 ### Lecture contents
 
-The checked collection is Lectures 02–19: 18 PDF/Markdown pairs, 209 slides,
-inventoried on 2026-10-31. Each link opens an outline with links to both formats.
-Recheck this inventory when source decks are added or replaced.
+Lectures 02–19 are listed in deck order. Each link opens the corresponding
+Notion lecture page with its notes, slide references, and sources.
 
-- [L02: BO preliminaries](slides/lecture-guide.md#lecture-02): optimization,
+- [Lecture 02 — BO preliminaries](https://app.notion.com/40af723fb8cc8168b497f24bc8d5a2fd). Optimization,
   surrogates, the BO loop, exploration/exploitation, acquisition, roadmap.
-- [L03: Uncertain quantities](slides/lecture-guide.md#lecture-03): random
+- [Lecture 03 — Uncertain quantities](https://app.notion.com/40af723fb8cc811f84bdeacaa81e4b64). Random
   variables/processes, notation, PMFs/PDFs, simulation, joint/marginal/conditional rules.
-- [L04: Intro Bayes](slides/lecture-guide.md#lecture-04): priors, likelihoods,
+- [Lecture 04 — Intro Bayes](https://app.notion.com/40af723fb8cc81399b66f56a517a4e5c). Priors, likelihoods,
   Bayes' theorem, normalization, multiple observations, Bayesian work-cycle.
-- [L05: Non-Gaussian variables](slides/lecture-guide.md#lecture-05): Bernoulli,
+- [Lecture 05 — Non-Gaussian variables](https://app.notion.com/40af723fb8cc816fbc1fc4bacf59340a). Bernoulli,
   binomial, Poisson, geometric, uniform, beta, von Mises, exponential, gamma,
   Weibull, beta-prime, chi, chi-square, Student-t; supports and simulation.
-- [L06: Gaussian scalars](slides/lecture-guide.md#lecture-06): normal density,
+- [Lecture 06 — Gaussian scalars](https://app.notion.com/40af723fb8cc81ed92f1d674f9b06bde). Normal density,
   whitening, sums/norms, CDF/quantiles, credible intervals, precision and conjugacy.
-- [L07: Gaussian vectors](slides/lecture-guide.md#lecture-07): covariance,
+- [Lecture 07 — Gaussian vectors](https://app.notion.com/40af723fb8cc81828b79e3e4cb0e0c0a). Covariance,
   affine transforms, sampling, Cholesky/eigen/SVD factors, linear Gaussian inference.
-- [L08: Gaussian conditioning](slides/lecture-guide.md#lecture-08): independence,
+- [Lecture 08 — Gaussian conditioning](https://app.notion.com/40af723fb8cc8195900cf256824b47bf). Independence,
   marginals, permutations, block conditionals, sequential updates, credible ellipses.
-- [L09: Hypothesis tests](slides/lecture-guide.md#lecture-09): categorical models,
+- [Lecture 09 — Hypothesis tests](https://app.notion.com/40af723fb8cc8137a9dfd5ceb9147032). Categorical models,
   spam example, Bayes factors, posterior odds, MAP/ML, uncertain-parameter evidence.
-- [L10: Exponential families](slides/lecture-guide.md#lecture-10): sufficient
+- [Lecture 10 — Exponential families](https://app.notion.com/40af723fb8cc81788aabef1eef13c0fd). Sufficient
   statistics, conjugate updates, normalizing constants, marginal likelihood, detection.
-- [L11: Decision theory](slides/lecture-guide.md#lecture-11): states/data/actions,
+- [Lecture 11 — Decision theory](https://app.notion.com/40af723fb8cc817c8199e06a77a08431). States/data/actions,
   loss, posterior risk, Bayes rules, mean/median/mode estimators, BO decisions.
-- [L12: Applied decisions](slides/lecture-guide.md#lecture-12): missing test
+- [Lecture 12 — Applied decisions](https://app.notion.com/40af723fb8cc81e59a8df32d1b14d783). Missing test
   identity, clinical losses, Dirichlet preferences, reactions, recommendation.
-- [L13: Linear regression](slides/lecture-guide.md#lecture-13): basis/design,
+- [Lecture 13 — Linear regression](https://app.notion.com/40af723fb8cc8185bf5fc8ec5a5b240d). Basis/design,
   normal equations, pseudoinverse, ridge, Gaussian coefficient posterior and MAP.
-- [L14: Model selection](slides/lecture-guide.md#lecture-14): candidate bases,
+- [Lecture 14 — Model selection](https://app.notion.com/40af723fb8cc811aba1eefc9089a2927). Candidate bases,
   model indicators, integrated evidence, Gaussian regression comparison.
-- [L15: Prediction](slides/lecture-guide.md#lecture-15): posterior predictive
+- [Lecture 15 — Prediction](https://app.notion.com/40af723fb8cc81919c9aee204238e68e). Posterior predictive
   integration, joint queries, parameter/noise uncertainty, Bayesian model averaging.
-- [L16: Kernel regression](slides/lecture-guide.md#lecture-16): function-space
+- [Lecture 16 — Kernel regression](https://app.notion.com/40af723fb8cc81658c49c34529af2fac). Function-space
   means/covariances, training/query blocks, conditioning, PSD kernels and composition.
-- [L17: Gaussian processes](slides/lecture-guide.md#lecture-17): finite-dimensional
+- [Lecture 17 — Gaussian processes](https://app.notion.com/40af723fb8cc81289f59fbdb9fdf6ff5). Finite-dimensional
   definition, heteroscedastic noise, consistency, function priors and samples.
-- [L18: GP regression](slides/lecture-guide.md#lecture-18): posterior derivation,
+- [Lecture 18 — GP regression](https://app.notion.com/40af723fb8cc81bdaa06d6d7c720bcb4). Posterior derivation,
   predictive mean/variance, observation noise, squared-exponential correlations.
-- [L19: GP implementation](slides/lecture-guide.md#lecture-19): triangular solves,
+- [Lecture 19 — GP implementation](https://app.notion.com/40af723fb8cc8113938cceac101df9a5). Triangular solves,
   Cholesky reuse, costs, squared-exponential/white/constant/periodic/diffusion kernels.
-
-### Assignment-specific context
-
-- Read [Assignment 2 instructions](assignment-2/AGENTS.md) when working on the
-  coin test; its [lecture guide](assignment-2/lecture-slide-guide.md) is a
-  task-specific selection, not the course-wide inventory.
-- Use each assignment's original PDF and any local instructions. The report
-  conventions below apply to student-authored solutions across assignments.
 
 ## Assignment submission filenames
 
