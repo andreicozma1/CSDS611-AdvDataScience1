@@ -1,8 +1,8 @@
 # Reading CSDS 611 Lecture Sources
 
 This file governs work in `lectures/`. The root also routes here whenever an
-assignment or question uses lecture evidence. Follow the root conventions;
-keep instructor PDFs and their Markdown transcriptions under their source names.
+assignment or question uses lecture evidence. Preserve the original PDFs and
+their Markdown transcriptions when organizing the files.
 
 ## Locate only the necessary material
 
@@ -12,15 +12,16 @@ references, equations, figures, related lectures, and any source notes.
 Confirm the relevant result in the original PDF. If Notion is unavailable,
 start with the local search below.
 
-The source pairs in this directory follow the names `CSDS611_Lecture_NN.pdf`
-and `CSDS611_Lecture_NN.md`. Inventory the files when coverage matters.
+Lecture files use `CSDS 611 - Lecture NN - Topic` as their basename.
+A PDF and its Markdown transcription share that basename when both exist.
+See the [local slide index](README.md#slides-by-lecture) for the available files.
 
 Search from the repository root, for example:
 
 ```sh
-rg -n -i 'marginal likelihood|hypothesis|posterior odds' lectures/CSDS611_Lecture_*.md
-rg -n -i 'conditionals|Cholesky|predictive|positive semi' lectures/CSDS611_Lecture_*.md
-rg -n -F '\Phi' lectures/CSDS611_Lecture_13.md
+rg -n -i 'marginal likelihood|hypothesis|posterior odds' lectures/"CSDS 611 - Lecture "*.md
+rg -n -i 'conditionals|Cholesky|predictive|positive semi' lectures/"CSDS 611 - Lecture "*.md
+rg -n -F '\Phi' 'lectures/CSDS 611 - Lecture 13 - Linear Regression.md'
 ```
 
 Try descriptive synonyms as well as symbols: evidence/marginal likelihood,

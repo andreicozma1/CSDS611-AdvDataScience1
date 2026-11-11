@@ -350,8 +350,8 @@ These entries are plausible readings of notation in the slides. The speaker's pr
 
 ## Terms to check against the audio
 
-- **Bayes factor and posterior odds.** The Bayes factor multiplies the prior odds to give the posterior odds. See [lecture 09](CSDS611_Lecture_09.md).
-- **Precision, variance, and standard deviation.** In the scalar Gaussian model, precision is inverse variance. Check what the speaker says before converting it to notation. See [lecture 06](CSDS611_Lecture_06.md).
-- **Positive definite and positive semidefinite.** A covariance matrix being factored and a kernel required to give valid covariance matrices appear in different contexts. See [lectures 07](CSDS611_Lecture_07.md) and [16](CSDS611_Lecture_16.md).
-- **Sharp, star, and prime.** Listen for the suffixes on variables. In GP regression, the slides use sharp for observed inputs and star for prediction locations. See [lecture 18](CSDS611_Lecture_18.md).
-- **Ioannis and Se7en.** Use the printed spelling when discussing the recommendation example. The text conversion sometimes reads `Ioannis` as `loannis`. See [lecture 12 PDF](CSDS611_Lecture_12.pdf).
+- **Bayes factor and posterior odds.** The Bayes factor multiplies the prior odds to give the posterior odds. See [lecture 09](<CSDS 611 - Lecture 09 - Bayesian Hypothesis Tests.md>).
+- **Precision, variance, and standard deviation.** In the scalar Gaussian model, precision is inverse variance. Check what the speaker says before converting it to notation. See [lecture 06](<CSDS 611 - Lecture 06 - Gaussian Random Scalars.md>).
+- **Positive definite and positive semidefinite.** A covariance matrix being factored and a kernel required to give valid covariance matrices appear in different contexts. See [lectures 07](<CSDS 611 - Lecture 07 - Gaussian Vectors - Transformations and Covariance Factors.md>) and [16](<CSDS 611 - Lecture 16 - Kernel Regression.md>).
+- **Sharp, star, and prime.** Listen for the suffixes on variables. In GP regression, the slides use sharp for observed inputs and star for prediction locations. See [lecture 18](<CSDS 611 - Lecture 18 - Gaussian Process Regression.md>).
+- **Ioannis and Se7en.** Use the printed spelling when discussing the recommendation example. The text conversion sometimes reads `Ioannis` as `loannis`. See [lecture 12 PDF](<CSDS 611 - Lecture 12 - Applied Decision Problems.pdf>).

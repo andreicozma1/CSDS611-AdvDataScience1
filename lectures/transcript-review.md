@@ -4,7 +4,7 @@ Reviews follow the order of the [dated recordings](README.md#recordings-by-date)
 
 ## August 20, 2026
 
-[Recording](2026-08-20_FB8DE074.m4a) · [Scribe v3 transcript](2026-08-20_FB8DE074.scribe-v3.md) · [Timed JSON](2026-08-20_FB8DE074.scribe-v3.json) · [Lecture 02 slides](CSDS611_Lecture_02.pdf)
+[Recording](2026-08-20_FB8DE074.m4a) · [Scribe v3 transcript](2026-08-20_FB8DE074.scribe-v3.md) · [Timed JSON](2026-08-20_FB8DE074.scribe-v3.json) · [Lecture 02 slides](<CSDS 611 - Lecture 02 - Bayesian Optimization Preliminaries.pdf>)
 
 The independent review covered the full 66:23 transcript, the timed JSON, all nine pages of Lecture 02, the slide conversion, the syllabus, the glossary, and the Notion lecture page. The lecture follows the slide sequence from optimization through acquisition functions. The review checked text against sources. Exact spoken wording and speaker assignments still require listening.
 
@@ -47,7 +47,7 @@ The user chose to keep the uncertain passages flagged and continue with 286 keyt
 
 ## August 25, 2026
 
-[Recording](2026-08-25_3D786893.m4a) · [Scribe v3 transcript](2026-08-25_3D786893.scribe-v3.md) · [Timed JSON](2026-08-25_3D786893.scribe-v3.json) · [Lecture 03 slides](CSDS611_Lecture_03.pdf)
+[Recording](2026-08-25_3D786893.m4a) · [Scribe v3 transcript](2026-08-25_3D786893.scribe-v3.md) · [Timed JSON](2026-08-25_3D786893.scribe-v3.json) · [Lecture 03 slides](<CSDS 611 - Lecture 03 - Uncertain Quantities of Interest.pdf>)
 
 The independent reviewer read the full 64:45.5 transcript and checked the timed JSON, glossary, and Lecture 03 Markdown and PDF. All 9,852 words have timestamps within the recording. The longest interval without timed words is 6.84 seconds. The review used text and source documents, with audio checks identified below.
 
@@ -92,7 +92,7 @@ The user chose to keep the uncertain passages flagged and continue with 288 keyt
 
 ## August 27, 2026
 
-[Recording](2026-08-27_0A2DB600.m4a) · [Scribe v3 transcript](2026-08-27_0A2DB600.scribe-v3.md) · [Timed JSON](2026-08-27_0A2DB600.scribe-v3.json) · [Lecture 04 slides](CSDS611_Lecture_04.pdf)
+[Recording](2026-08-27_0A2DB600.m4a) · [Scribe v3 transcript](2026-08-27_0A2DB600.scribe-v3.md) · [Timed JSON](2026-08-27_0A2DB600.scribe-v3.json) · [Lecture 04 slides](<CSDS 611 - Lecture 04 - Introduction to Bayes.pdf>)
 
 The independent review covered the full 58:15.5 transcript, the timed JSON, and all nine pages of Lecture 04 and its Markdown conversion. All 9,351 words have valid timestamps. The transcript used the 288-term glossary.
 
@@ -103,10 +103,10 @@ The independent review covered the full 58:15.5 transcript, the timed JSON, and 
 
 ### Technical notes
 
-- **39:53–42:20, unknown-trials posterior.** Slide 7 correctly starts the sum of posterior probabilities at $J=0$, but then substitutes an expression with $(J-w)!$ into every summand. That expression applies on $J\ge w$. The likelihood gives zero posterior mass below $w$, so the substituted expression should be summed from $J=w$. The final shifted-Poisson form is correct on that support. High confidence in the missing support qualification. [Lecture 04, slide 7](CSDS611_Lecture_04.pdf)
-- **47:54–49:30, independent priors and conditionally independent observations.** The product on slide 8 is valid for the stated factorization. Independence is a modeling assumption, and marginal distributions alone do not establish it. High confidence in the qualification. [Lecture 04, slide 8](CSDS611_Lecture_04.pdf)
+- **39:53–42:20, unknown-trials posterior.** Slide 7 correctly starts the sum of posterior probabilities at $J=0$, but then substitutes an expression with $(J-w)!$ into every summand. That expression applies on $J\ge w$. The likelihood gives zero posterior mass below $w$, so the substituted expression should be summed from $J=w$. The final shifted-Poisson form is correct on that support. High confidence in the missing support qualification. [Lecture 04, slide 7](<CSDS 611 - Lecture 04 - Introduction to Bayes.pdf>)
+- **47:54–49:30, independent priors and conditionally independent observations.** The product on slide 8 is valid for the stated factorization. Independence is a modeling assumption, and marginal distributions alone do not establish it. High confidence in the qualification. [Lecture 04, slide 8](<CSDS 611 - Lecture 04 - Introduction to Bayes.pdf>)
 - **24:15–25:04, “there is no nonparametric Bayes’ theorem.”** The lecture qualifies this in terms of ordinary probability functions. Bayesian updating still has a measure-theoretic form for infinite-dimensional problems. High confidence in the mathematical qualification. [Stuart, *Inverse problems: A Bayesian perspective*](https://doi.org/10.1017/S0962492910000061)
-- **56:40, “reinforcement learning is actually one special case of active learning.”** The closing slide lists active learning and Bayesian optimization. Reinforcement learning generally concerns sequential decisions and rewards, and some methods overlap with active learning. High confidence that the rendered subset claim is too broad. Exact speech still needs listening. [Lecture 04, slide 9](CSDS611_Lecture_04.pdf) · [Sutton and Barto, *Reinforcement Learning: An Introduction*](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
+- **56:40, “reinforcement learning is actually one special case of active learning.”** The closing slide lists active learning and Bayesian optimization. Reinforcement learning generally concerns sequential decisions and rewards, and some methods overlap with active learning. High confidence that the rendered subset claim is too broad. Exact speech still needs listening. [Lecture 04, slide 9](<CSDS 611 - Lecture 04 - Introduction to Bayes.pdf>) · [Sutton and Barto, *Reinforcement Learning: An Introduction*](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
 
 ### Timing and speaker checks
 
@@ -119,7 +119,7 @@ The user chose to keep the `generative model` candidate flagged and continue wit
 
 ## September 1, 2026
 
-[Recording](2026-09-01_D708E20C.m4a) · [Scribe v3 transcript](2026-09-01_D708E20C.scribe-v3.md) · [Timed JSON](2026-09-01_D708E20C.scribe-v3.json) · [Lecture 05 slides](CSDS611_Lecture_05.pdf)
+[Recording](2026-09-01_D708E20C.m4a) · [Scribe v3 transcript](2026-09-01_D708E20C.scribe-v3.md) · [Timed JSON](2026-09-01_D708E20C.scribe-v3.json) · [Lecture 05 slides](<CSDS 611 - Lecture 05 - Non-Gaussian Random Variables.pdf>)
 
 The independent reviewer checked the full transcript against the timed JSON and the 18-slide deck. All 10,184 words have valid timestamps. Scribe used six anonymous speaker labels. The longest interval without timed words was 5.8 seconds.
 
@@ -154,7 +154,7 @@ The mathematical notes resolve the intended formulas for readers. The transcript
 
 ## September 3, 2026
 
-[Recording](2026-09-03_C995A7EF.m4a) · [Scribe v3 transcript](2026-09-03_C995A7EF.scribe-v3.md) · [Timed JSON](2026-09-03_C995A7EF.scribe-v3.json) · [Lecture 06 slides](CSDS611_Lecture_06.pdf)
+[Recording](2026-09-03_C995A7EF.m4a) · [Scribe v3 transcript](2026-09-03_C995A7EF.scribe-v3.md) · [Timed JSON](2026-09-03_C995A7EF.scribe-v3.json) · [Lecture 06 slides](<CSDS 611 - Lecture 06 - Gaussian Random Scalars.pdf>)
 
 The independent reviewer read the full transcript and checked the timed JSON and Lecture 06 Markdown and eight-page PDF. All 9,176 words have timestamps within the recording. Scribe used three anonymous speaker labels. The longest interval without timed words was 8.34 seconds at the end. This request used 292 keyterms.
 
@@ -177,7 +177,7 @@ The user then confirmed that the professor permits using the recordings this way
 
 ## September 8, 2026
 
-[Recording](2026-09-08_FE79D51A.m4a) · [Transcript](2026-09-08_FE79D51A.scribe-v3.md) · [Timed JSON](2026-09-08_FE79D51A.scribe-v3.json) · [Lecture 07 slides](CSDS611_Lecture_07.pdf)
+[Recording](2026-09-08_FE79D51A.m4a) · [Transcript](2026-09-08_FE79D51A.scribe-v3.md) · [Timed JSON](2026-09-08_FE79D51A.scribe-v3.json) · [Lecture 07 slides](<CSDS 611 - Lecture 07 - Gaussian Vectors - Transformations and Covariance Factors.pdf>)
 
 The independent reviewer read the full transcript, checked relevant timed JSON, and compared Lecture 07 Markdown and PDF text. All 9,826 words have valid timestamps, with four anonymous labels and a longest no-timed-words interval of 9.55 seconds. The request used 292 terms. The review found no glossary addition that met the confidence threshold.
 
@@ -188,11 +188,11 @@ The independent reviewer read the full transcript, checked relevant timed JSON, 
 - **17:08, “isomorphic to the positive semi-definite.”** Slides 2–3 use strictly positive covariance. In one dimension the variance ranges over $(0,\infty)$. High confidence in the intended domain, uncertain whether the speaker said “semidefinite.” The following “cup of air” at **17:13** is also suspect, with no confidently established wording.
 - **33:50, “they’re all correlated, right? So independent.”** Identity covariance gives zero off-diagonal covariance. For a jointly Gaussian vector this implies independence, consistent with the instructor’s explanation. High confidence in the mathematical distinction, medium confidence that the student said “uncorrelated.”
 - **50:41, “it’s about 92.”** Slide 7 gives an approximate eigen-decomposition cost of $9D^3$, and the lecturer later contrasts 22, 9, and 1/3. High confidence in the slide’s coefficient, uncertain exact spoken number.
-- **57:04–1:00:00, decomposition failure.** Slide 8 and the transcript frame Cholesky and eigendecomposition as prone to failure and SVD as always working. Cholesky applies to positive-definite input and can have numerical difficulty near singularity. SVD can factor an indefinite matrix, but forming the positive-semidefinite product $LL^T$ from a singular-value square root does not in general recover that matrix as a valid covariance. High confidence in the qualification. [Lecture 07, slides 7–8](CSDS611_Lecture_07.pdf)
+- **57:04–1:00:00, decomposition failure.** Slide 8 and the transcript frame Cholesky and eigendecomposition as prone to failure and SVD as always working. Cholesky applies to positive-definite input and can have numerical difficulty near singularity. SVD can factor an indefinite matrix, but forming the positive-semidefinite product $LL^T$ from a singular-value square root does not in general recover that matrix as a valid covariance. High confidence in the qualification. [Lecture 07, slides 7–8](<CSDS 611 - Lecture 07 - Gaussian Vectors - Transformations and Covariance Factors.pdf>)
 
 ## September 10, 2026
 
-[Recording](2026-09-10_349E6F2E.m4a) · [Transcript](2026-09-10_349E6F2E.scribe-v3.md) · [Timed JSON](2026-09-10_349E6F2E.scribe-v3.json) · [Lecture 08 slides](CSDS611_Lecture_08.pdf)
+[Recording](2026-09-10_349E6F2E.m4a) · [Transcript](2026-09-10_349E6F2E.scribe-v3.md) · [Timed JSON](2026-09-10_349E6F2E.scribe-v3.json) · [Lecture 08 slides](<CSDS 611 - Lecture 08 - Gaussian Vectors - Conditioning and Credible Ellipses.pdf>)
 
 The independent reviewer read the full transcript, checked word-level offsets, and compared the Markdown and all 11 PDF slides, including the figures on slides 9–10. All 10,211 words have valid timestamps. Scribe used three anonymous labels. The longest interval without timed words was 7.76 seconds.
 
@@ -213,7 +213,7 @@ The independent reviewer read the full transcript, checked word-level offsets, a
 
 ## September 17, 2026
 
-[Recording](2026-09-17_0EF7DF90.m4a) · [Transcript](2026-09-17_0EF7DF90.scribe-v3.md) · [Timed JSON](2026-09-17_0EF7DF90.scribe-v3.json) · [Lecture 10 slides](CSDS611_Lecture_10.pdf)
+[Recording](2026-09-17_0EF7DF90.m4a) · [Transcript](2026-09-17_0EF7DF90.scribe-v3.md) · [Timed JSON](2026-09-17_0EF7DF90.scribe-v3.json) · [Lecture 10 slides](<CSDS 611 - Lecture 10 - The Exponential Family.pdf>)
 
 The reviewer read the full transcript and timed JSON and compared the equations with Lecture 10 Markdown. The parent checked the relevant PDF text. All 9,394 words have valid timestamps and two anonymous labels. The request used 293 terms. The strongest terminology confusions involve terms already in the glossary.
 
@@ -229,7 +229,7 @@ The reviewer read the full transcript and timed JSON and compared the equations 
 
 ## September 22, 2026
 
-[Recording](2026-09-22_0C09C6AA.m4a) · [Transcript](2026-09-22_0C09C6AA.scribe-v3.md) · [Timed JSON](2026-09-22_0C09C6AA.scribe-v3.json) · [Lecture 11 slides](CSDS611_Lecture_11.pdf)
+[Recording](2026-09-22_0C09C6AA.m4a) · [Transcript](2026-09-22_0C09C6AA.scribe-v3.md) · [Timed JSON](2026-09-22_0C09C6AA.scribe-v3.json) · [Lecture 11 slides](<CSDS 611 - Lecture 11 - Bayesian Decision Theory.pdf>)
 
 The independent reviewer read the full transcript and timed JSON and compared Lecture 11 Markdown and all ten PDF slides. All 7,566 words have timestamps, with five anonymous labels and a longest interval without timed words of 4.62 seconds. No glossary addition met the confidence threshold. The list stays at 293 terms.
 
@@ -241,7 +241,7 @@ The independent reviewer read the full transcript and timed JSON and compared Le
 
 ## September 24, 2026
 
-[Recording](2026-09-24_2C2C7B9F.m4a) · [Transcript](2026-09-24_2C2C7B9F.scribe-v3.md) · [Timed JSON](2026-09-24_2C2C7B9F.scribe-v3.json) · [Lecture 12 slides](CSDS611_Lecture_12.pdf)
+[Recording](2026-09-24_2C2C7B9F.m4a) · [Transcript](2026-09-24_2C2C7B9F.scribe-v3.md) · [Timed JSON](2026-09-24_2C2C7B9F.scribe-v3.json) · [Lecture 12 slides](<CSDS 611 - Lecture 12 - Applied Decision Problems.pdf>)
 
 The independent reviewer read the full transcript and checked the JSON and original slides. All 12,367 words have valid timestamps, with four anonymous labels and a longest interval without timed words of 5.58 seconds. This recording used 293 keyterms. No demonstrated recognition issue justified a new term. Scribe rendered “Kullback-Leibler divergence” correctly.
 
@@ -256,7 +256,7 @@ The independent reviewer read the full transcript and checked the JSON and origi
 
 ## September 29, 2026
 
-[Recording](2026-09-29_17950960.m4a) · [Transcript](2026-09-29_17950960.scribe-v3.md) · [Timed JSON](2026-09-29_17950960.scribe-v3.json) · [Lecture 13 slides](CSDS611_Lecture_13.pdf)
+[Recording](2026-09-29_17950960.m4a) · [Transcript](2026-09-29_17950960.scribe-v3.md) · [Timed JSON](2026-09-29_17950960.scribe-v3.json) · [Lecture 13 slides](<CSDS 611 - Lecture 13 - Linear Regression.pdf>)
 
 The independent reviewer read the full transcript, checked word-level offsets, and compared the PDF and Markdown. All 9,925 words have valid timestamps. Five anonymous labels include two one-word labels. There are 23.23 seconds without timed words after the closing farewell. Whether the tail contains post-lecture speech is unverified.
 
@@ -278,7 +278,7 @@ The independent reviewer read the full transcript, checked word-level offsets, a
 
 ## October 1, 2026
 
-[Recording](2026-10-01_9A3E8C58.m4a) · [Transcript](2026-10-01_9A3E8C58.scribe-v3.md) · [Timed JSON](2026-10-01_9A3E8C58.scribe-v3.json) · [Lecture 14 slides](CSDS611_Lecture_14.pdf)
+[Recording](2026-10-01_9A3E8C58.m4a) · [Transcript](2026-10-01_9A3E8C58.scribe-v3.md) · [Timed JSON](2026-10-01_9A3E8C58.scribe-v3.json) · [Lecture 14 slides](<CSDS 611 - Lecture 14 - Model Selection.pdf>)
 
 The independent reviewer read the full transcript and compared the word-level timing, glossary, and Lecture 14 Markdown and PDF text. All 8,433 words have valid timestamps, with four anonymous labels and a longest interval without timed words of 6.66 seconds. The observed issues concern wording and notation, so the glossary remains at 294 terms.
 
@@ -292,7 +292,7 @@ The independent reviewer read the full transcript and compared the word-level ti
 
 ## October 8, 2026
 
-[Recording](2026-10-08_52291E85.m4a) · [Transcript](2026-10-08_52291E85.scribe-v3.md) · [Timed JSON](2026-10-08_52291E85.scribe-v3.json) · [Lecture 15 slides](CSDS611_Lecture_15.pdf)
+[Recording](2026-10-08_52291E85.m4a) · [Transcript](2026-10-08_52291E85.scribe-v3.md) · [Timed JSON](2026-10-08_52291E85.scribe-v3.json) · [Lecture 15 slides](<CSDS 611 - Lecture 15 - Posterior Prediction.pdf>)
 
 The independent reviewer read the full transcript, checked word-level offsets, and used the PDF for the predictive formulas. All 9,348 words have valid timestamps. There are three anonymous labels and a longest interval without timed words of 9.34 seconds.
 
@@ -311,7 +311,7 @@ The independent reviewer read the full transcript, checked word-level offsets, a
 
 ## October 13, 2026
 
-[Recording](2026-10-13_09627C3C.m4a) · [Transcript](2026-10-13_09627C3C.scribe-v3.md) · [Timed JSON](2026-10-13_09627C3C.scribe-v3.json) · [Lecture 16 slides](CSDS611_Lecture_16.pdf)
+[Recording](2026-10-13_09627C3C.m4a) · [Transcript](2026-10-13_09627C3C.scribe-v3.md) · [Timed JSON](2026-10-13_09627C3C.scribe-v3.json) · [Lecture 16 slides](<CSDS 611 - Lecture 16 - Kernel Regression.pdf>)
 
 The independent reviewer read the full transcript and timed JSON and compared the 12-page PDF and Markdown. All 9,433 words have valid timestamps, with five anonymous labels. The longest interval without timed words was 7.44 seconds. Two one-word labels fall at plausible short replies.
 
@@ -332,7 +332,7 @@ The independent reviewer read the full transcript and timed JSON and compared th
 
 ## October 27, 2026
 
-[Recording](2026-10-27_0AF31E51.m4a) · [Transcript](2026-10-27_0AF31E51.scribe-v3.md) · [Timed JSON](2026-10-27_0AF31E51.scribe-v3.json) · [Lecture 19 slides](CSDS611_Lecture_19.pdf)
+[Recording](2026-10-27_0AF31E51.m4a) · [Transcript](2026-10-27_0AF31E51.scribe-v3.md) · [Timed JSON](2026-10-27_0AF31E51.scribe-v3.json) · [Lecture 19 slides](<CSDS 611 - Lecture 19 - Implementing Gaussian Process Regression.pdf>)
 
 The independent reviewer read the full transcript and timed JSON, compared all 17 PDF pages and the Markdown, and checked the kernel claims against a GP textbook. All 8,355 words have valid timestamps, with two anonymous labels.
 
@@ -344,14 +344,14 @@ The independent reviewer read the full transcript and timed JSON, compared all 1
 
 - **00:45–01:25 and 03:47–04:46, short classroom answers.** Several question-like and answer-like turns share Speaker 0. Medium confidence in a possible missed speaker switch, uncertain attribution without listening.
 - **27:35–27:43, “this policy is a by definite.”** The context is definiteness of the chosen covariance kernel. High confidence in a recognition problem, medium confidence in the exact intended wording.
-- **About 37:59–38:33 and 42:42–43:00, “the value of sigma is not important at all.”** The amplitude cancels from normalized correlation, but it scales the covariance and can change predictions relative to fixed observation noise. High confidence in the scope qualification. [Lecture 19, slide 6](CSDS611_Lecture_19.pdf)
+- **About 37:59–38:33 and 42:42–43:00, “the value of sigma is not important at all.”** The amplitude cancels from normalized correlation, but it scales the covariance and can change predictions relative to fixed observation noise. High confidence in the scope qualification. [Lecture 19, slide 6](<CSDS 611 - Lecture 19 - Implementing Gaussian Process Regression.pdf>)
 - **About 42:11–42:52, zero correlation implies independence.** This implication is valid for the jointly Gaussian pair discussed here. High confidence in the need to preserve that assumption when quoting the claim.
 - **51:25–51:58, nearby correlations approaching one imply continuous functions.** For this kernel the conclusion is consistent with its strong smoothness properties. Correlation approaching one, under the stated fixed variance, gives mean-square continuity. A claim about continuous sample paths needs a separate path-regularity argument. High confidence in the distinction. [Rasmussen and Williams, *Gaussian Processes for Machine Learning*, Chapter 4](https://gaussianprocess.org/gpml/chapters/RW4.pdf)
 - **52:10.002–53:25.702, 75.70 seconds without timed words.** The lecturer closes class immediately before the gap, and the next transcript passage is informal post-class conversation. Local levels were mean −39.2 dBFS and peak −10.7 dBFS. Those levels and timestamps do not establish whether anyone spoke during the interval.
 
 ## October 29, 2026
 
-[Recording](2026-10-29_B21AFBFC.m4a) · [Transcript](2026-10-29_B21AFBFC.scribe-v3.md) · [Timed JSON](2026-10-29_B21AFBFC.scribe-v3.json) · [Lecture 19 slides](CSDS611_Lecture_19.pdf)
+[Recording](2026-10-29_B21AFBFC.m4a) · [Transcript](2026-10-29_B21AFBFC.scribe-v3.md) · [Timed JSON](2026-10-29_B21AFBFC.scribe-v3.json) · [Lecture 19 slides](<CSDS 611 - Lecture 19 - Implementing Gaussian Process Regression.pdf>)
 
 The reviewer read the full transcript, checked word-level offsets, and compared the kernel and factorization formulas with Lecture 19 Markdown. The parent checked PDF slides 5 and 12 for the two key issues. All 10,287 words have valid timestamps, with four anonymous labels. The longest interval without timed words was 5.22 seconds. No new glossary term met the confidence threshold. The list remains at 298 terms.
 
@@ -366,7 +366,7 @@ The reviewer read the full transcript, checked word-level offsets, and compared 
 
 ## November 5, 2026
 
-[Recording](2026-11-05_13D4A044.m4a) · [Transcript](2026-11-05_13D4A044.scribe-v3.md) · [Timed JSON](2026-11-05_13D4A044.scribe-v3.json) · [Related Lecture 02 slides](CSDS611_Lecture_02.pdf)
+[Recording](2026-11-05_13D4A044.m4a) · [Transcript](2026-11-05_13D4A044.scribe-v3.md) · [Timed JSON](2026-11-05_13D4A044.scribe-v3.json) · [Related Lecture 02 slides](<CSDS 611 - Lecture 02 - Bayesian Optimization Preliminaries.pdf>)
 
 The independent reviewer read the full transcript, checked its timed JSON and the glossary, and compared it with Lecture 02 Markdown and the extracted text of all nine PDF slides. The class covers Bayesian optimization with Gaussian process surrogates, space-filling initial samples, and confidence-bound acquisition functions. Lecture 02 supports the general framework. The deck for the November 5 examples is unconfirmed. All 10,901 words have valid timestamps, with six anonymous labels and a longest interval of 6.24 seconds without timed words.
 
