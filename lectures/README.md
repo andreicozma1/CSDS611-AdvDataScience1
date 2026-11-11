@@ -31,8 +31,8 @@ has detailed outlines and slide references.
 | 17 | Gaussian processes | From kernel regression to Gaussian process priors, finite collections of function values | [PDF](<CSDS 611 - Lecture 17 - Gaussian Processes.pdf>) · [Markdown](<CSDS 611 - Lecture 17 - Gaussian Processes.md>) |
 | 18 | Gaussian processes regression | Gaussian process regression, posterior mean and covariance, squared exponential kernel | [PDF](<CSDS 611 - Lecture 18 - Gaussian Process Regression.pdf>) · [Markdown](<CSDS 611 - Lecture 18 - Gaussian Process Regression.md>) |
 | 19 | Implementation of Gaussian processes regression | Cholesky factorization and updates, predictive statistics, noise, periodic, and diffusion kernels | [PDF](<CSDS 611 - Lecture 19 - Implementing Gaussian Process Regression.pdf>) · [Markdown](<CSDS 611 - Lecture 19 - Implementing Gaussian Process Regression.md>) |
-| 20 | BO | Bayesian optimization with probabilistic surrogates | [PDF](<CSDS 611 - Lecture 20 - Bayesian Optimization - Surrogates.pdf>) |
-| 21 | BO | Acquisition functions, including confidence bounds, improvement criteria, and Thompson sampling | [PDF](<CSDS 611 - Lecture 21 - Bayesian Optimization - Acquisition Functions.pdf>) |
+| 20 | BO | Bayesian optimization with probabilistic surrogates | [PDF](<CSDS 611 - Lecture 20 - Bayesian Optimization - Surrogates.pdf>) · [Markdown](<CSDS 611 - Lecture 20 - Bayesian Optimization - Surrogates.md>) · [Notion](https://app.notion.com/p/415f723fb8cc818a8085c9a2ca6c0aa3) |
+| 21 | BO | Acquisition functions, including confidence bounds, improvement criteria, and Thompson sampling | [PDF](<CSDS 611 - Lecture 21 - Bayesian Optimization - Acquisition Functions.pdf>) · [Markdown](<CSDS 611 - Lecture 21 - Bayesian Optimization - Acquisition Functions.md>) · [Notion](https://app.notion.com/p/415f723fb8cc81ca83b2d596748d0725) |
 
 Lecture 17’s title is shown with its spelling corrected.
 

@@ -48,8 +48,9 @@ independent derivations. For the coin test, start with the
 
 ### Lecture contents
 
-Lectures 02–19 are listed in deck order. Each link opens the corresponding
-Notion lecture page with its notes, slide references, and sources.
+Lectures 02–21 are listed in deck order. Each link opens the corresponding
+Notion lecture page with its notes, slide references, and sources. For local
+files, see the [slide index](lectures/README.md#slides-by-lecture).
 
 - [Lecture 02 — BO preliminaries](https://app.notion.com/40af723fb8cc8168b497f24bc8d5a2fd). Optimization,
   surrogates, the BO loop, exploration/exploitation, acquisition, roadmap.
@@ -88,6 +89,12 @@ Notion lecture page with its notes, slide references, and sources.
   predictive mean/variance, observation noise, squared-exponential correlations.
 - [Lecture 19 — GP implementation](https://app.notion.com/40af723fb8cc8113938cceac101df9a5). Triangular solves,
   Cholesky reuse, costs, squared-exponential/white/constant/periodic/diffusion kernels.
+- [Lecture 20 — Bayesian optimization with GP surrogates](https://app.notion.com/p/415f723fb8cc818a8085c9a2ca6c0aa3).
+  Expensive objectives, GP surrogate and observation model, space-filling
+  initial designs, the sequential query loop, and upper and lower confidence bounds.
+- [Lecture 21 — Bayesian optimization acquisition functions](https://app.notion.com/p/415f723fb8cc81ca83b2d596748d0725).
+  Confidence bounds, expected and probability of improvement, jitter,
+  Thompson sampling, planning horizon, and a one-dimensional comparison.
 
 ## Assignment submission filenames
 
@@ -98,8 +105,9 @@ Assignment 2 uses `assignment_2_acozma.tex` and
 when they are retained. Check the source, PDF, and references after a rename.
 
 This convention applies to student-authored solutions. Keep instructor-provided
-assignment prompts, source archives, and lecture materials under their source
-filenames. Follow an explicit assignment submission filename if one is given.
+assignment prompts and source archives under their source filenames. Use the
+[lecture filename convention](lectures/AGENTS.md#locate-only-the-necessary-material)
+for lecture files. Follow an explicit assignment submission filename if one is given.
 
 ## Student report voice and structure
 
