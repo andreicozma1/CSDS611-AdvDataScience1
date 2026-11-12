@@ -19,14 +19,10 @@ the answer.
   answer, or the remaining detail is routine. Follow the broader tool and
   authorization rules if a choice requires permission or the tool is unavailable.
 
-## Final project report (Overleaf)
+## Final project
 
-The [Overleaf submodule](final-project-report/) holds the LaTeX source for
-the CSDS 611 final project report. For report edits, start with
-[`main.tex`](final-project-report/main.tex) inside the submodule.
-
-The course repository pins a specific report commit. The submodule is
-configured to track Overleaf's `main` branch for remote updates.
+Start with the [final project instructions](final-project/AGENTS.md) for the
+project code and the Overleaf report submodule.
 
 ## Finding course evidence
 
