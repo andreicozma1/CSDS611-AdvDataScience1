@@ -348,6 +348,11 @@ These entries are plausible readings of notation in the slides. The speaker's pr
 
 - ell
 
+### Additions from the November 10 transcript
+
+- UCB
+- LCB
+
 ## Terms to check against the audio
 
 - **Bayes factor and posterior odds.** The Bayes factor multiplies the prior odds to give the posterior odds. See [lecture 09](<CSDS 611 - Lecture 09 - Bayesian Hypothesis Tests.md>).

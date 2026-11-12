@@ -386,6 +386,43 @@ The independent reviewer read the full transcript, checked its timed JSON and th
 - **24:44–24:58 and 1:01:24, possible speaker switches.** Question and reply boundaries merit a listen if attribution matters. Text alone leaves the speaker identities and switches unresolved.
 - The reviewer proposed sampling and acquisition terminology including `Latin hypercube sampling`, `quasi-Monte Carlo`, and `lower confidence bound`. The transcript already recognizes those terms and the other proposed concepts. The observed recognition problems involve ordinary wording, so no new term met the threshold for addition. This recording used the final 298-term list.
 
-## Batch verification
+## November 10, 2026
+
+[Recording](2026-11-10_8F5F2BB7.m4a) · [Transcript](2026-11-10_8F5F2BB7.scribe-v3.md) · [Timed JSON](2026-11-10_8F5F2BB7.scribe-v3.json) · [Lecture 21 slides](<CSDS 611 - Lecture 21 - Bayesian Optimization - Acquisition Functions.pdf>)
+
+Two reviewers read the full 65:57 transcript and compared the technical passages with the timed JSON, Lecture 21 Markdown, and the original PDF text. The sequence matches Lecture 21, from the Bayesian optimization loop through confidence bounds, expected and probability of improvement, Thompson sampling, and the one-dimensional demonstration. The saved JSON is the original Scribe v3 response. All 10,656 words have timestamps in range and in order, with four anonymous speaker labels. The longest interval without timed words was 7.32 seconds (1:00:49.560–1:00:56.880). Exact spoken wording and speaker identity were unverified by listening. The request used the current 298-term glossary.
+
+### Applied corrections
+
+- **34:15.532, 38:53.052, 43:29.016, 52:43.192, 58:33.332, and 1:01:22.840** — “UBC” → “UCB.” Lecture 21, slide 4, defines the upper confidence bound and the transcript uses “UCB” correctly nearby.
+- **38:53.892 and 43:29.495** — “LBC” and “LPC” → “LCB.” Both occur paired with the mislabeled upper confidence bound, matching slide 4.
+- **1:04:20.600** — “UBC3” → “UCB3.” The phrase refers back to the initial upper-confidence-bound run with beta set to 3.
+- **39:22.912** — “PO loop” → “BO loop.” The speaker is describing changing the acquisition function in the existing Bayesian optimization loop, shown on slide 2.
+- **47:06.796** — “another work for myopic” → “another word for myopic.” The response explains why different research communities use different terms.
+
+Added `UCB` and `LCB` to the glossary for future recordings, bringing the list to 300 terms. The November 10 request used the 298-term version.
+
+### Wording to confirm
+
+- **06:27, 19:21, and 19:47** — “Call X,” “construct an advance,” and “exogenous position X.” The surrounding slides establish the search space, acquisition function, and arbitrary test point. The exact wording is uncertain.
+- **24:33 and 27:20** — “AJ” and “the U and V.” Slide 3 uses $\alpha^j$ for the acquisition function and $m(x),v(x)$ for the posterior moments. Check the audio before substituting a spoken symbol or letter.
+- **27:57** — “expectation needs to be 0.” The speaker immediately says the expectation should be low. The lower confidence bound uses $m(x)-\beta\sqrt{v(x)}$ with no zero-mean requirement. “Low” is a plausible reading.
+- **29:46 and 33:45** — “my J, my surrogate” and “standard match.” Slides 3 and 5 establish $g$ as the surrogate and the standard normal CDF and PDF in the EI formula. “Standard normal” is a strong contextual candidate. Check the exact phrase before replacing either.
+- **36:03–36:25 and 51:20** — “psi” for the jitter parameter. Slides 6–7 print $\xi$ (xi). The slides establish the symbol while the speaker's pronunciation remains uncertain. Both terms already appear in the glossary.
+- **47:37, 49:16, and 49:54** — “toothless,” “not gradient of constant,” and “gamma and lambda.” “Tools” fits the joke, a nonconstant mean fits the example, and slide 10 uses gamma and ell for kernel amplitude and length scale. The exact speech needs confirmation.
+- **52:34, 53:49, 58:34, 1:00:29, and 1:05:01** — “the saving,” “high age,” “large data,” “two drops,” and “larger answer.” The surrounding passages concern a posterior band, exploration, a large UCB weight, candidate peaks, and posterior variability. The meaning is generally recoverable and exact replacements remain uncertain.
+- **04:04–04:46** — The student-like question about being assigned a group sits inside Speaker 0's paragraph. A missed switch is plausible. Speaker 2's two one-word responses at **05:29** and **05:32** follow a direct address and are plausible short turns.
+
+### Technical and slide notes
+
+- **06:56–07:16 and 09:28.** Boundedness alone gives no convergence guarantee, and approximate GP inference for a non-Gaussian likelihood can use methods besides MCMC. Treat these as qualifications to the spoken claims. [GP-UCB regret analysis](https://arxiv.org/abs/0912.3995) · [*Gaussian Processes for Machine Learning*, Chapter 3](https://gaussianprocess.org/gpml/chapters/RW3.pdf)
+- **16:02–17:19.** Parallel evaluation can reduce elapsed time while still consuming multiple evaluations. Taking the top individual acquisition scores can select redundant points, and batch Bayesian optimization has methods that account for their joint value. [Parallel knowledge gradient](https://arxiv.org/abs/1606.04414)
+- **31:12–34:06.** The expected improvement introduction repeatedly describes the probability of exceeding the best observed value. Expected improvement averages the positive amount of improvement, while probability of improvement measures the chance of clearing a threshold. The distinction is stated more clearly later at **36:39–37:32** and **1:01:25**. Keep the clarification in the review notes. [Frazier, *A Tutorial on Bayesian Optimization*, §4.1](https://arxiv.org/abs/1807.02811)
+- **38:53–39:17 and 43:29.** The confidence bounds are presented as heuristic choices in class. GP-UCB has regret guarantees under stated model assumptions and a specified exploration schedule. Those guarantees do not automatically cover the fixed beta in the demonstration. [GP-UCB regret analysis](https://arxiv.org/abs/0912.3995)
+- **41:51–42:03.** The transcript correctly says to minimize the posterior sample for a minimization objective. Slide 8 prints `argmax` in that column. Slides 5–8 also label their minimization columns “For maximization problems.” The EI and PI acquisitions themselves are maximized for either objective direction, so the `argmax` issue applies specifically to the Thompson sampling minimization formula. [Lecture 21 slides](<CSDS 611 - Lecture 21 - Bayesian Optimization - Acquisition Functions.pdf>) · [Russo et al., *A Tutorial on Thompson Sampling*](https://arxiv.org/abs/1707.02038)
+- **45:22–47:00.** Non-myopic Bayesian optimization is an established approach to planning future evaluations. The reinforcement learning analogy describes a connection, while the distinction between value and reward functions does not define myopic versus non-myopic policies. [Jiang et al., *Efficient Nonmyopic Bayesian Optimization*](https://arxiv.org/abs/2006.15779)
+- **52:58, 55:05, and 56:13.** The demonstration evaluates the objective at the point selected by the acquisition function, and the stated objective is maximization. “Compute my acquisition function next,” “very many global maxima,” and “a local minimum here” merit caution if quoted. Context supports the technical distinctions while leaving the source of those phrases uncertain.
+
+## Original batch verification
 
 All 17 recordings have a Markdown transcript, an unmodified provider JSON response, and an independent review above. The audio totals 17 hours, 32 minutes, and 27.6 seconds. All 165,347 returned words have timestamps within the corresponding recording, and the original JSON preserves the provider wording in order. The Markdown incorporates eight timestamped recognition corrections across five recordings. Each request's keyterm count and checksum can be reproduced from the ordered glossary. The list grew from 285 to 298 terms, and the speech-to-text settings stayed consistent throughout the batch. Text, timing, and source comparisons leave exact wording and speaker attribution unresolved where the review notes call for listening.
