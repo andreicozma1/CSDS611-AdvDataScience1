@@ -1,4 +1,8 @@
 [submodule "6af38516ca42ab1113783a37"]
-	path = final-project/final-project-report
+	path = final-project/report
 	url = https://git@git.overleaf.com/6af38516ca42ab1113783a37
+	branch = main
+[submodule "final-project-code"]
+	path = final-project/code
+	url = git@github.com:andreicozma1/CSDS611-Final-Project-Code.git
 	branch = main
