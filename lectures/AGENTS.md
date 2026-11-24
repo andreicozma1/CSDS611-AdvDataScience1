@@ -16,6 +16,12 @@ Lecture files use `CSDS 611 - Lecture NN - Topic` as their basename.
 A PDF and its Markdown transcription share that basename when both exist.
 See the [local slide index](README.md#slides-by-lecture) for the available files.
 
+When mapping numbered slide decks to class dates or recordings, use the
+[dated class schedule](README.md#class-schedule). Semester week numbers include
+breaks. Do not infer dates from slide numbers alone; preserve the schedule’s
+confidence labels and distinguish missing recordings from canceled classes,
+project sessions, and meetings replaced by office hours.
+
 Search from the repository root, for example:
 
 ```sh
