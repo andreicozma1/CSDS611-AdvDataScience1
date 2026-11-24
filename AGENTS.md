@@ -1,28 +1,23 @@
 # CSDS 611 Repository Instructions
 
-## Make choices together
-
-After a quick check of the requirements and existing files, use the permitted
-structured input tool early when the user's preference would change what you
-deliver or how they use it. This includes reversible choices such as where
-recordings live, how files are named, or how much detail goes into a report.
-Ask before making the dependent change. Continue work that is independent of
-the answer.
-
-- Start with the choice that rules out the most irrelevant options. Offer two
-  or three viable choices or a yes/no question. Use actual paths, names, or
-  outcomes in the labels and explain the tradeoffs in the descriptions.
-- Recommend one option when the evidence supports it. Let the user redirect,
-  defer, or combine compatible choices. Ask a follow-up only if the first
-  answer leaves a decision that would still change the result.
-- Proceed directly when the user has already chosen, the assignment fixes the
-  answer, or the remaining detail is routine. Follow the broader tool and
-  authorization rules if a choice requires permission or the tool is unavailable.
-
 ## Final project
 
-Start with the [final project instructions](final-project/AGENTS.md) for the
-project code and the Overleaf report submodule.
+Read the [final project instructions](final-project/AGENTS.md) for required
+deliverables before planning, implementing, or writing up project work.
+Use the [Step 1 evaluation contract](final-project/AGENTS.md#step-1-evaluation-contract)
+when comparing solvers, timing the objective, or evaluating fits.
+For BO work, follow the [project guidance](final-project/AGENTS.md#optimization-studies-and-figures)
+and [method note](final-project/notes/bayesian-optimization.md). Distinguish the
+[GP, acquisition function, and acquisition optimizer](final-project/notes/bayesian-optimization.md#components-and-responsibilities)
+in descriptions and comparisons. Use the [BO terminology](final-project/notes/bayesian-optimization.md#terminology)
+to distinguish initial design points, acquisition initialization, and objective evaluations. The
+4,096-candidate experiments are archived, not main comparisons.
+
+## Make choices together
+
+Check the assignment and existing work before raising a choice about a
+deliverable or group responsibility. Follow the global conversation loop
+for asking and continuing work.
 
 ## Finding course evidence
 
@@ -114,7 +109,8 @@ first reading, detailed enough to check, and direct about choices and limits.
 Think of a well-edited answer sheet with explanations, rather than a textbook
 chapter, study guide, research paper, or transcript of the solving process.
 The assignment prompt and any required template take priority over these
-defaults.
+defaults. For the [group final project](final-project/AGENTS.md#where-to-work),
+use the project's report voice and agreed contribution scope.
 
 ### Build the answer around the task
 
